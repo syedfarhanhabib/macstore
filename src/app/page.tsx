@@ -1,113 +1,145 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import Categories from '@/components/hero/categories';
+import { Spotlight } from '@/components/hero/spotlight';
+import { cardData, lineupData, tabsData } from '@/lib/data';
+import { motion, useScroll, useSpring } from 'framer-motion';
+import Image from 'next/image';
+import React, { useRef } from 'react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from '@/components/ui/button';
+import { BiRightArrow, BiRightArrowAlt } from 'react-icons/bi';
+
+
+
+const Page: React.FC = () => {
+  const heroRef = useRef<HTMLElement | null>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["100% 100%", "80% 80%"],
+  });
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <main className="overflow-hidden">
+      <section ref={heroRef} className="hero w-full min-h-dvh pt-36 px-10 flex flex-col gap-5">
+        <Spotlight
+          className="-top-40 left-0 md:left-60 md:-top-20"
+          fill="fill-primary"
         />
-      </div>
+        <figure className="tracking-tighter leading-none pb-5 font-medium flex flex-col md:flex-row justify-between w-full">
+          <h1 className="text-7xl bg-gradient-to-br from-muted-foreground to-primary bg-clip-text text-transparent">
+            If you can dream it,
+            <br />
+            Mac can do it.
+          </h1><h3 className="text-3xl">Mac</h3>
+        </figure>
+        <motion.video
+          style={{ scaleX, opacity: scrollYProgress, scaleY: scrollYProgress, transition: "all ease .2s" }}
+          src="/machero.mp4"
+          className="w-full rounded-3xl object-cover"
+          autoPlay
+          muted
+          loop
+        />
+      </section>
+      <Categories />
+      <section className='carousel' >
+        <h3 className='text-7xl font-medium tracking-tighter px-10 pb-5' >Get to know Mac.</h3>
+        <Carousel>
+          <CarouselContent className='w-full flex gap-10 pl-14' >
+            {cardData.map((item, index) => (
+              <CarouselItem
+                className={`relative basis-3/4 md:basis-1/3 cursor-grab ${index == 3 ? "text-zinc-100" : "text-zinc-950"} h-dvh flex-shrink-0 overflow-hidden p-5 rounded-3xl`}
+                key={index}
+              >
+                <h2>{item.title}</h2>
+                <p className='text-4xl font-medium' >{item.description}</p>
+                <Image src={item.img} alt='' fill className='z-[-1] w-full h-full absolute left-0 bottom-0 object-cover' />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </section>
+      <section className='lineup min-h-dvh pt-20 px-10 pb-10' >
+        <h3 className='text-7xl font-medium tracking-tighter pb-5' >Explore the lineup.</h3>
+        <Tabs defaultValue="Laptops" className="w-full">
+          <TabsList className='mb-5 text-3xl' >
+            <TabsTrigger value="Laptops">Laptops</TabsTrigger>
+            <TabsTrigger value="Desktops">Desktops</TabsTrigger>
+            <TabsTrigger value="Displays">Displays</TabsTrigger>
+          </TabsList>
+          {lineupData.map((category, indexValue) => (
+            <TabsContent key={indexValue} value={category.title} className='rounded-3xl flex flex-col md:flex-row gap-10' >
+              {category.data.map((item, index) => (
+                <React.Fragment key={index}>
+                  <div className='relative rounded-3xl bg-muted py-5 px-5 items-center justify-center flex flex-col gap-5 text-center w-full md:w-1/3 h-fit shadow-lg'>
+                    <Image src={item.img} alt={item.name} width={900} height={900} className=' w-full object-contain h-72' />
+                    <div className='flex flex-col gap-1 items-center'>
+                      <h3 className='title' >{item.name}</h3>
+                      <p className='subtitle' >{item.processor}</p>
+                    </div>
+                    <p className='desc px-3' >{item.description}</p>
+                    <div className="buttons flex items-center gap-5">
+                      <Button variant={"default"} className='bg-blue-500' >Learn more</Button>
+                      <Button variant={"link"} >Buy now <BiRightArrowAlt /> </Button>
+                    </div>
+                    <div className='w-full h-fit border-t border-muted-foreground/60 pt-10 mt-5 flex flex-col gap-10' >
+                      <div className='flex flex-col gap-1 items-center' >
+                        <h3 className='title' >{item.screen}</h3>
+                        <p className='desc px-3' >{item.screenDesc}</p>
+                      </div>
+                      {indexValue! == 0 && <div className='flex flex-col gap-1 items-center'>
+                        <Image src={item.processorImg} alt={item.processor} width={100} height={100} className='mx-auto h-14 object-contain' />
+                        <p className='desc' >{item.processor}</p>
+                      </div>}
+                      {indexValue! == 1 && <div className='flex flex-col gap-1 items-center'>
+                        <Image src={item.processorImg} alt={item.processor} width={100} height={100} className='mx-auto h-10 object-contain' />
+                        <p className='desc' >{item.processor}</p>
+                      </div>}
+                      {indexValue! == 0 && <div className='flex flex-col gap-1 items-center'>
+                        <p className='desc'>up to</p>
+                        <h3 className='title' >{item.battery}</h3>
+                        <p className="desc">battery life</p>
+                      </div>}
+                      <div className="ports flex flex-col gap-1 items-center">
+                        <h3 className='title' >{item.ports}</h3>
+                        <p className="desc">{item.portsDesc}</p>
+                      </div>
+                      {indexValue! == 2 && <div className="camera flex flex-col gap-1 items-center">
+                        <h3 className='title' >{item.camera}</h3>
+                        <p className="desc">{item.cameraDesc}</p>
+                      </div>}
+                      {indexValue! == 0 && <div className="weight flex flex-col gap-1 items-center">
+                        <h3 className='title' >{item.weight}</h3>
+                        <p className="desc">weight</p>
+                      </div>}
+                    </div>
+                  </div>
+                </React.Fragment>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+              ))}
+            </TabsContent>
+          ))}
+        </Tabs>
+      </section>
+    </main >
   );
-}
+};
+
+export default Page;
