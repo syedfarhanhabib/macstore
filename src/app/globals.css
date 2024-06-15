@@ -81,14 +81,14 @@ img::selection {
   }
 
   .desc {
-    @apply text-sm font-normal leading-none text-muted-foreground px-5;
+    @apply text-sm font-normal leading-none tracking-wide text-muted-foreground px-5;
   }
 
   .title {
-    @apply font-medium text-3xl tracking-tighter leading-none;
+    @apply font-medium text-xl md:text-3xl tracking-tight leading-none;
   }
 
   .subtitle {
-    @apply font-light text-2xl tracking-tighter leading-none;
+    @apply font-light text-lg md:text-2xl tracking-tight leading-none;
   }
 }
