@@ -81,7 +81,7 @@ img::selection {
   }
 
   .desc {
-    @apply text-sm font-normal leading-none tracking-wide text-muted-foreground px-5;
+    @apply text-sm font-normal leading-none tracking-normal text-muted-foreground md:px-5;
   }
 
   .title {
@@ -90,5 +90,13 @@ img::selection {
 
   .subtitle {
     @apply font-light text-lg md:text-2xl tracking-tight leading-none;
+  }
+
+  .heading {
+    @apply text-3xl md:text-7xl font-medium tracking-tight pb-5;
+  }
+
+  .lineupSection {
+    @apply flex flex-col gap-2 md:items-center justify-center;
   }
 }
