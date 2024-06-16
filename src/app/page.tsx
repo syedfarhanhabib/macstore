@@ -37,7 +37,7 @@ const Page: React.FC = () => {
           fill="fill-primary"
         />
         <figure className="tracking-tighter leading-none pb-5 font-medium flex flex-col md:flex-row justify-between w-full">
-          <h1 className="text-7xl bg-gradient-to-br from-muted-foreground to-primary bg-clip-text text-transparent">
+          <h1 className="gradientText">
             If you can dream it,
             <br />
             Mac can do it.
@@ -46,7 +46,7 @@ const Page: React.FC = () => {
         <video
           // style={{ scaleX, opacity: scrollYProgress, scaleY: scrollYProgress, transition: "all ease .2s" }}
           src="/machero.mp4"
-          className="w-full rounded-3xl object-cover"
+          className="w-full h-[75vh] rounded-3xl object-cover"
           autoPlay
           muted
           loop

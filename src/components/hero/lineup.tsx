@@ -28,14 +28,14 @@ const Lineup = () => {
                             <CarouselContent className='ml-[2px] flex gap-10 basis-4/5'>
                                 {category.data.map((item, index) => (
                                     <React.Fragment key={index}>
-                                        <div className='flex-shrink-0 rounded-3xl p-5 md:items-center justify-cente flex flex-col gap-5 md:text-center w-5/6 md:w-1/3 h-fit shadow-lg'>
+                                        <div className='flex-shrink-0 rounded-3xl p-5 md:items-center justify-cente flex flex-col gap-5 md:text-center w-5/6 md:w-1/3 h-fit shadow'>
                                             <Image src={item.img} alt={item.name} width={900} height={900} className=' w-full object-contain h-32 md:h-40' />
                                             <div className='lineupSection'>
                                                 <h3 className='title' >{item.name}</h3>
                                                 <p className='subtitle' >{item.processor}</p>
                                             </div>
                                             <p className='desc' >{item.description}</p>
-                                            <div className="buttons flex items-center gap-5">
+                                            <div className="buttons flex items-center gap-0">
                                                 <Button variant={"default"} className='bg-blue-500' >Learn more</Button>
                                                 <Button variant={"link"} >Buy now <BiRightArrowAlt /> </Button>
                                             </div>

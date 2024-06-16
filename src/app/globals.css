@@ -99,4 +99,8 @@ img::selection {
   .lineupSection {
     @apply flex flex-col gap-2 md:items-center justify-center;
   }
+  .gradientText {
+    @apply text-5xl md:text-7xl bg-gradient-to-br from-muted-foreground to-primary bg-clip-text text-transparent;
+  }
+
 }
