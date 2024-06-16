@@ -14,7 +14,7 @@ import Image from 'next/image';
 
 const Lineup = () => {
     return (
-        <section className='lineup relative min-h-dvh pt-20 px-4 md:px-10 pb-10' >
+        <section className='lineup relative w-full min-h-dvh pt-20 px-4 md:px-10 pb-10' >
             <h3 className='heading' >Explore the lineup.</h3>
             <Tabs defaultValue="Laptops" className="w-full">
                 <TabsList className='mb-5 text-3xl' >
@@ -28,7 +28,7 @@ const Lineup = () => {
                             <CarouselContent className='ml-[2px] flex gap-10 basis-4/5'>
                                 {category.data.map((item, index) => (
                                     <React.Fragment key={index}>
-                                        <div className='relative flex-shrink-0 rounded-3xl md:bg-muted/0 p-5 md:items-center justify-cente flex flex-col gap-5 md:text-center w-5/6 md:w-1/3 h-fit shadow-lg'>
+                                        <div className='flex-shrink-0 rounded-3xl p-5 md:items-center justify-cente flex flex-col gap-5 md:text-center w-5/6 md:w-1/3 h-fit shadow-lg'>
                                             <Image src={item.img} alt={item.name} width={900} height={900} className=' w-full object-contain h-32 md:h-40' />
                                             <div className='lineupSection'>
                                                 <h3 className='title' >{item.name}</h3>
@@ -45,11 +45,11 @@ const Lineup = () => {
                                                     <p className='desc' >{item.screenDesc}</p>
                                                 </div>
                                                 {indexValue! == 0 && <div className='lineupSection'>
-                                                    <Image src={item.processorImg} alt={item.processor} width={100} height={100} className='md:mx-auto h-14 object-contain' />
+                                                    <Image src={item.processorImg} alt={item.processor} width={100} height={100} className='md:mx-auto w-fit h-10 object-contain' />
                                                     <p className='desc' >{item.processor}</p>
                                                 </div>}
                                                 {indexValue! == 1 && <div className='lineupSection'>
-                                                    <Image src={item.processorImg} alt={item.processor} width={100} height={100} className='mx-auto h-10 object-contain' />
+                                                    <Image src={item.processorImg} alt={item.processor} width={100} height={100} className='md:mx-auto w-fit h-10 object-contain' />
                                                     <p className='desc' >{item.processor}</p>
                                                 </div>}
                                                 {indexValue! == 0 && <div className='lineupSection'>
@@ -74,7 +74,7 @@ const Lineup = () => {
                                     </React.Fragment>
                                 ))}
                             </CarouselContent>
-                            <div className="flex items-center absolute right-10 w-fit md:right-10 -top-[2.9rem]">
+                            <div className="flex items-center absolute bg-black right-10 w-fit h-4 z-10 md:right-16 top-20">
                                 <CarouselNext />
                                 <CarouselPrevious />
                             </div>

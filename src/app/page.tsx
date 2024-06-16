@@ -56,13 +56,13 @@ const Page: React.FC = () => {
       <section className='carousel px-4 md:px-10' >
         <h3 className='heading' >Get to know Mac.</h3>
         <Carousel className='px-4 md:px-10'>
-          <CarouselContent className='w-full flex gap-10' >
+          <CarouselContent className='w-full flex gap-10'>
             {cardData.map((item, index) => (
               <CarouselItem
                 className={`relative basis-3/4 md:basis-1/3 cursor-grab ${index == 3 ? "text-zinc-100" : "text-zinc-950"} flex-shrink-0 h-[36rem] md:h-[48rem] overflow-hidden p-5 rounded-3xl`}
                 key={index}
               >
-                <h2 className={`desc py-1 !px-2 ${index == 3 ? "text-zinc-950 bg-zinc-50" : "bg-zinc-950 text-zinc-50"} text-background rounded-full w-fit`} >{item.title}</h2>
+                <h2 className={`leading-none text-xs md:text-sm py-1 !px-2 ${index == 3 ? "text-zinc-950 bg-zinc-50" : "bg-zinc-950 text-zinc-50"} rounded-full w-fit`} >{item.title}</h2>
                 <p className='title' >{item.description}</p>
                 <Image src={item.img} alt='' fill className='z-[-1] w-full h-full absolute left-0 bottom-0 object-cover' />
               </CarouselItem>
