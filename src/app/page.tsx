@@ -16,22 +16,22 @@ import Lineup from '@/components/hero/lineup';
 
 
 const Page: React.FC = () => {
-  const heroRef = useRef<HTMLElement | null>(null);
+  // const heroRef = useRef<HTMLElement | null>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["100% 100%", "80% 80%"],
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: heroRef,
+  //   offset: ["100% 100%", "80% 80%"],
+  // });
 
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
+  // const scaleX = useSpring(scrollYProgress, {
+  //   stiffness: 100,
+  //   damping: 30,
+  //   restDelta: 0.001,
+  // });
 
   return (
     <main className="overflow-hidden">
-      <section ref={heroRef} className="hero w-full min-h-dvh pt-36 px-4 md:px-10 flex flex-col gap-5">
+      <section className="hero w-full min-h-dvh pt-36 px-4 md:px-10 flex flex-col gap-5">
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="fill-primary"
@@ -43,8 +43,8 @@ const Page: React.FC = () => {
             Mac can do it.
           </h1><h3 className="heading">Mac</h3>
         </figure>
-        <motion.video
-          style={{ scaleX, opacity: scrollYProgress, scaleY: scrollYProgress, transition: "all ease .2s" }}
+        <video
+          // style={{ scaleX, opacity: scrollYProgress, scaleY: scrollYProgress, transition: "all ease .2s" }}
           src="/machero.mp4"
           className="w-full rounded-3xl object-cover"
           autoPlay
