@@ -74,10 +74,10 @@ const Page: React.FC = () => {
           </CarouselContent>
         </Carousel>
       </section>
-      <section className='lineup min-h-dvh pt-20 px-4 md:px-10 pb-10' >
+      <section className='lineup relative min-h-dvh pt-20 px-4 md:px-10 pb-10' >
         <h3 className='text-7xl font-medium tracking-tighter pb-5' >Explore the lineup.</h3>
         <Tabs defaultValue="Laptops" className="w-full">
-          <TabsList className='mb-5 text-3xl' >
+          <TabsList className='mb-0 text-3xl' >
             <TabsTrigger value="Laptops">Laptops</TabsTrigger>
             <TabsTrigger value="Desktops">Desktops</TabsTrigger>
             <TabsTrigger value="Displays">Displays</TabsTrigger>
@@ -86,10 +86,9 @@ const Page: React.FC = () => {
             <TabsContent key={indexValue} value={category.title} className='rounded-3xl flex flex-col md:flex-row gap-10' >
               <Carousel>
                 <CarouselContent className='ml-[2px] flex gap-10 basis-4/5'>
-                  {/* <CarouselItem> */}
                   {category.data.map((item, index) => (
                     <React.Fragment key={index}>
-                      <div className='relative rounded-3xl bg-muted p-5 items-center justify-center flex flex-col gap-5 text-center w-[190%] md:w-1/3 h-fit shadow-lg'>
+                      <div className='relativ flex-shrink-0 rounded-3xl bg-muted p-5 items-center justify-center flex flex-col gap-5 text-center w-5/6 md:w-1/3 h-fit shadow-lg'>
                         <Image src={item.img} alt={item.name} width={900} height={900} className=' w-full object-contain h-32 md:h-40' />
                         <div className='flex flex-col gap-1 items-center'>
                           <h3 className='title' >{item.name}</h3>
@@ -134,8 +133,11 @@ const Page: React.FC = () => {
                       </div>
                     </React.Fragment>
                   ))}
-                  {/* </CarouselItem> */}
                 </CarouselContent>
+                <div className="flex items-center absolute right-10 w-fit md:right-10 -top-[2.9rem]">
+                  <CarouselNext />
+                  <CarouselPrevious />
+                </div>
               </Carousel>
             </TabsContent>
           ))}
