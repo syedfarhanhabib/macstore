@@ -1,5 +1,4 @@
 'use client';
-
 import Categories from '@/components/hero/categories';
 import { Spotlight } from '@/components/hero/spotlight';
 import { cardData, essentialsCard } from '@/lib/data';
