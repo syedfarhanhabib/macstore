@@ -7,6 +7,15 @@ img::selection {
   color: transparent;
 }
 
+::selection {
+  background-color: transparent;
+  color: currentColor;
+}
+
+* {
+  transition: all ease .2s;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -27,7 +36,7 @@ img::selection {
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 240 4.8% 95.9%;
+    --accent: 220.8, 73.4%, 59.8%;
     --accent-foreground: 240 5.9% 10%;
 
     --destructive: 0 84.2% 60.2%;
@@ -59,7 +68,7 @@ img::selection {
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
 
-    --accent: 240 3.7% 15.9%;
+    --accent: 220.8, 73.4%, 59.8%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -85,7 +94,7 @@ img::selection {
   }
 
   .title {
-    @apply font-medium text-xl md:text-3xl tracking-tight leading-none;
+    @apply font-medium text-primary text-xl md:text-3xl tracking-tight leading-none;
   }
 
   .subtitle {
@@ -99,8 +108,19 @@ img::selection {
   .lineupSection {
     @apply flex flex-col gap-2 md:items-center justify-center;
   }
+
   .gradientText {
-    @apply text-5xl md:text-7xl bg-gradient-to-br from-muted-foreground to-primary bg-clip-text text-transparent;
+    @apply bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .center {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
   }
 
 }
+
+
+/* html::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+} */

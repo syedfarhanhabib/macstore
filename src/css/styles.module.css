@@ -1,0 +1,8 @@
+/* .carousel {
+    background-color: aqua;
+    scrollbar-width: 0;
+} */
+
+.carousel::-webkit-scrollbar {
+    width: 0;
+}

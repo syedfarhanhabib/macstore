@@ -14,15 +14,15 @@ const Navbar = () => {
                 </Link>
                 <div className='w-[1px] h-4 bg-primary' />
                 <ul className='flex items-center gap-0' >
-                    <Link href={"/"} ><li><Button variant={"link"}>Store</Button></li></Link>
+                    <Link href={"/store"} ><li><Button variant={"link"}>Store</Button></li></Link>
                     <Link href={"/"} ><li><Button variant={"link"}>Accesories</Button></li></Link>
                     <Link href={"/"} ><li><Button variant={"link"}>Support</Button></li></Link>
                 </ul>
             </nav>
-            <nav className='flex items-center text-lg gap-5' >
+            <nav className='flex items-center text-lg gap-3' >
                 <ThemeSwitch />
-                <Link href={"/"}><Button variant={"outline"} size={"icon"} ><BiSearch /></Button></Link>
-                <Link href={"/"}><Button variant={"outline"} size={"icon"} ><BiCart /></Button></Link>
+                <Link href={"/"}><Button variant={"ghost"} size={"icon"} ><BiSearch /></Button></Link>
+                <Link href={"/"}><Button variant={"ghost"} size={"icon"} ><BiCart /></Button></Link>
             </nav>
         </header>
     )

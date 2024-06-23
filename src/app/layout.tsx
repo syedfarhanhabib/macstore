@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Urbanist } from "next/font/google";
+import { DM_Sans, Urbanist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/navbar";
 import { Providers } from "./providers";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
+const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",

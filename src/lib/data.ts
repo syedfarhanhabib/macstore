@@ -1,6 +1,7 @@
 import { title } from "process";
-import { BiCamera } from "react-icons/bi";
+import { BiCamera, BiFullscreen } from "react-icons/bi";
 import React from "react";
+import { BsBatteryFull, BsFillThunderboltFill } from "react-icons/bs";
 
 export const cardData = [
     {
@@ -24,32 +25,119 @@ export const cardData = [
         img: "/security.jpg"
     },
 ];
-export const tabsData = [
-    "Laptops",
-    "Desktops",
-    "Displays",
+export const categories = [
+    {
+        title: "Mac mini",
+        img: "/pc mini.svg"
+    },
+    {
+        title: "Mac Studio",
+        img: "/pc pro.svg"
+    },
+    {
+        title: "Mac pro",
+        img: "/pc.svg"
+    },
+    {
+        title: "Macbook Air",
+        img: "/accessories.svg"
+    },
+    {
+        title: "Macbook Pro",
+        img: "/laptop pro.svg"
+    },
+    {
+        title: "iMac",
+        img: "/computer.svg"
+    },
+    {
+        title: "Studio Display",
+        img: "/displays.svg"
+    },
 ];
-
-// export const lineupData = [
-//     {
-//         name: "MacBook Air 13” and 15”",
-//         processor: "M2 or M3 chip",
-//         description: "Strikingly thin and fast so you can work, play, or create anywhere.",
-//         img: "/hello.jpg"
-//     }, {
-//         name: "MacBook Air 13” and 15”",
-//         processor: "M2 or M3 chip",
-//         description: "Strikingly thin and fast so you can work, play, or create anywhere.",
-//         img: "/hello.jpg"
-//     }, {
-//         name: "MacBook Air 13” and 15”",
-//         processor: "M2 or M3 chip",
-//         description: "Strikingly thin and fast so you can work, play, or create anywhere.",
-//         img: "/hello.jpg"
-//     },
-// ];
-
-
+export const storeCard = [
+    {
+        "title": "Macbook Air",
+        "data": [
+            {
+                name: "MacBook Air 13” and 15”",
+                price: "$999",
+                img: "/macbook-air.png",
+                link: "/macbook-air",
+                img1: "/m3.png",
+                desc1: "With M3, M3 Pro, or M3 Max, our most advanced chips for personal computers, MacBook Pro empowers you to take on the most demanding projects",
+                img2: React.createElement(BsBatteryFull),
+                desc2: "Go all day with up to 22 hours of battery life Footnote¹",
+                img3: React.createElement(BiFullscreen),
+                desc3: "Liquid Retina XDR display is the best ever in a laptop, with Extreme Dynamic Range, incredible contrast, and true-to-life colors",
+                img4: React.createElement(BiCamera),
+                desc4: "Look sharp and sound clear — anywhere — with the 1080p FaceTime HD camera, three studio-quality mics, and six speakers with Spatial Audio",
+                img5: React.createElement(BsFillThunderboltFill),
+                desc5: "Connect everything you need with up to three Thunderbolt 4 ports, an SDXC card slot, an HDMI port, a MagSafe 3 port, and a headphone jack",
+            },
+        ]
+    },
+    {
+        "title": "Macbook Pro",
+        "data": [
+            {
+                name: "MacBook Pro 14-inch",
+                price: "$1599",
+                img: "/macbook-pro.png",
+                link: "/macbook-pro",
+                img1: "/m3.png",
+                desc1: "With M3, M3 Pro, or M3 Max, our most advanced chips for personal computers, MacBook Pro empowers you to take on the most demanding projects",
+                img2: React.createElement(BsBatteryFull),
+                desc2: "Go all day with up to 22 hours of battery life Footnote¹",
+                img3: React.createElement(BiFullscreen),
+                desc3: "Liquid Retina XDR display is the best ever in a laptop, with Extreme Dynamic Range, incredible contrast, and true-to-life colors",
+                img4: React.createElement(BiCamera),
+                desc4: "Look sharp and sound clear — anywhere — with the 1080p FaceTime HD camera, three studio-quality mics, and six speakers with Spatial Audio",
+                img5: React.createElement(BsFillThunderboltFill),
+                desc5: "Connect everything you need with up to three Thunderbolt 4 ports, an SDXC card slot, an HDMI port, a MagSafe 3 port, and a headphone jack",
+            },
+        ]
+    },
+   
+    // {
+    //     title: "iMac",
+    //     price: "$1299",
+    //     img: "/store-imac.png",
+    //     link: "/studio-display",
+    // },
+    // {
+    //     title: "Mac mini",
+    //     price: "$599",
+    //     img: "/store-mini.png",
+    //     link: "/studio-display",
+    // },
+    // {
+    //     title: "Mac studio",
+    //     price: "$999",
+    //     img: "/pc pro.png",
+    //     link: "/studio-display",
+    // },
+    // {
+    //     title: "Mac Pro",
+    //     price: "$599",
+    //     img: "/mac pro.png",
+    //     link: "/studio-display",
+    // },
+];
+export const essentialsCard = [
+    {
+        title: "Accessories",
+        desc: "Explore keyboards, mice, and other essentials.",
+        img: "/essentials-accessories.png",
+        link: "/accessories",
+    },
+    {
+        title: "Studio Display",
+        desc: "The 27-inch 5K Retina display pairs beautifully with any Mac.",
+        img: "/essentials-display.png",
+        link: "/studio-display",
+    },
+];
 export const lineupData = [
     {
         "title": "Laptops",
@@ -218,4 +306,4 @@ export const lineupData = [
             },
         ]
     },
-]
+];
