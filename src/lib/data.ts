@@ -1,7 +1,8 @@
-import { title } from "process";
-import { BiCamera, BiFullscreen } from "react-icons/bi";
+import { BiCamera, BiColor, BiDesktop, BiFullscreen } from "react-icons/bi";
 import React from "react";
-import { BsBatteryFull, BsFillThunderboltFill } from "react-icons/bs";
+import { BsBatteryFull, BsFillThunderboltFill, BsFullscreen } from "react-icons/bs";
+import { DesktopIcon } from "@radix-ui/react-icons";
+import { CgDesktop } from "react-icons/cg";
 
 export const cardData = [
     {
@@ -57,60 +58,97 @@ export const categories = [
 ];
 export const storeCard = [
     {
-        "title": "Macbook Air",
-        "data": [
-            {
-                name: "MacBook Air 13” and 15”",
-                price: "$999",
-                img: "/macbook-air.png",
-                link: "/macbook-air",
-                img1: "/m3.png",
-                desc1: "With M3, M3 Pro, or M3 Max, our most advanced chips for personal computers, MacBook Pro empowers you to take on the most demanding projects",
-                img2: React.createElement(BsBatteryFull),
-                desc2: "Go all day with up to 22 hours of battery life Footnote¹",
-                img3: React.createElement(BiFullscreen),
-                desc3: "Liquid Retina XDR display is the best ever in a laptop, with Extreme Dynamic Range, incredible contrast, and true-to-life colors",
-                img4: React.createElement(BiCamera),
-                desc4: "Look sharp and sound clear — anywhere — with the 1080p FaceTime HD camera, three studio-quality mics, and six speakers with Spatial Audio",
-                img5: React.createElement(BsFillThunderboltFill),
-                desc5: "Connect everything you need with up to three Thunderbolt 4 ports, an SDXC card slot, an HDMI port, a MagSafe 3 port, and a headphone jack",
-            },
-        ]
+        title: "Macbook Air",
+        data:
+        {
+            name: "MacBook Air 13” and 15”",
+            price: "$999",
+            image1: "/macbook-air.png",
+            image2: "/store-imac2.png",
+            image3: "/store-imac3.png",
+            link: "/macbook-air",
+            img1: "/m3.png",
+            desc1: "With M3, M3 Pro, or M3 Max, our most advanced chips for personal computers, MacBook Pro empowers you to take on the most demanding projects",
+            img2: React.createElement(BsBatteryFull),
+            desc2: "Go all day with up to 22 hours of battery life Footnote¹",
+            img3: React.createElement(BiFullscreen),
+            desc3: "Liquid Retina XDR display is the best ever in a laptop, with Extreme Dynamic Range, incredible contrast, and true-to-life colors",
+            img4: React.createElement(BiCamera),
+            desc4: "Look sharp and sound clear — anywhere — with the 1080p FaceTime HD camera, three studio-quality mics, and six speakers with Spatial Audio",
+            img5: React.createElement(BsFillThunderboltFill),
+            desc5: "Connect everything you need with up to three Thunderbolt 4 ports, an SDXC card slot, an HDMI port, a MagSafe 3 port, and a headphone jack",
+        },
+
     },
     {
-        "title": "Macbook Pro",
-        "data": [
-            {
-                name: "MacBook Pro 14-inch",
-                price: "$1599",
-                img: "/macbook-pro.png",
-                link: "/macbook-pro",
-                img1: "/m3.png",
-                desc1: "With M3, M3 Pro, or M3 Max, our most advanced chips for personal computers, MacBook Pro empowers you to take on the most demanding projects",
-                img2: React.createElement(BsBatteryFull),
-                desc2: "Go all day with up to 22 hours of battery life Footnote¹",
-                img3: React.createElement(BiFullscreen),
-                desc3: "Liquid Retina XDR display is the best ever in a laptop, with Extreme Dynamic Range, incredible contrast, and true-to-life colors",
-                img4: React.createElement(BiCamera),
-                desc4: "Look sharp and sound clear — anywhere — with the 1080p FaceTime HD camera, three studio-quality mics, and six speakers with Spatial Audio",
-                img5: React.createElement(BsFillThunderboltFill),
-                desc5: "Connect everything you need with up to three Thunderbolt 4 ports, an SDXC card slot, an HDMI port, a MagSafe 3 port, and a headphone jack",
-            },
-        ]
+        title: "Macbook Pro",
+        data:
+        {
+            name: "MacBook Pro 14-inch",
+            price: "$1599",
+            image1: "/macbook-pro.png",
+            image2: "/store-imac2.png",
+            image3: "/store-imac3.png",
+            link: "/macbook-pro",
+            img1: "/m3.png",
+            desc1: "With M3, M3 Pro, or M3 Max, our most advanced chips for personal computers, MacBook Pro empowers you to take on the most demanding projects",
+            img2: React.createElement(BsBatteryFull),
+            desc2: "Go all day with up to 22 hours of battery life Footnote¹",
+            img3: React.createElement(BiFullscreen),
+            desc3: "Liquid Retina XDR display is the best ever in a laptop, with Extreme Dynamic Range, incredible contrast, and true-to-life colors",
+            img4: React.createElement(BiCamera),
+            desc4: "Look sharp and sound clear — anywhere — with the 1080p FaceTime HD camera, three studio-quality mics, and six speakers with Spatial Audio",
+            img5: React.createElement(BsFillThunderboltFill),
+            desc5: "Connect everything you need with up to three Thunderbolt 4 ports, an SDXC card slot, an HDMI port, a MagSafe 3 port, and a headphone jack",
+        },
+
     },
-   
-    // {
-    //     title: "iMac",
-    //     price: "$1299",
-    //     img: "/store-imac.png",
-    //     link: "/studio-display",
-    // },
-    // {
-    //     title: "Mac mini",
-    //     price: "$599",
-    //     img: "/store-mini.png",
-    //     link: "/studio-display",
-    // },
+    {
+        title: "iMac",
+        data:
+        {
+            name: "iMac",
+            price: "$1299",
+            image1: "/store-imac.png",
+            image2: "/store-imac2.png",
+            image3: "/store-imac3.png",
+            link: "/imac",
+            img1: "/m3.png",
+            desc1: "Supercharged by the Apple M3 chip, so everything you do on your iMac is incredibly fast and responsive",
+            img2: React.createElement(BiFullscreen),
+            desc2: "Immersive 24-inch 4.5K Retina display Footnote¹",
+            img3: React.createElement(BiDesktop),
+            desc3: "Strikingly thin all-in-one desktop in seven vibrant colors",
+            img4: React.createElement(BiCamera),
+            desc4: "Look sharp and sound great with the 1080p FaceTime HD camera, three-mic array, and six-speaker sound system with Spatial Audio",
+            img5: React.createElement(BiColor),
+            desc5: "Color-matched Magic Mouse and Magic Keyboard included",
+        },
+
+    },
+    {
+        title: "Mac mini",
+        data:
+        {
+            name: "Mac mini",
+            price: "$599",
+            image1: "/store-mini.png",
+            image2: "/store-imac2.png",
+            image3: "/store-imac3.png",
+            link: "/mac-mini",
+            img1: "/m2pro.png",
+            desc1: "Do more and do it faster with the next-generation M2 or M2 Pro chip",
+            img2: React.createElement(CgDesktop),
+            desc2: "Mac mini turns any desk into a powerful workstation, so you can create, code and collaborate",
+            img3: React.createElement(BiDesktop),
+            desc3: "Strikingly thin all-in-one desktop in seven vibrant colors",
+            img4: React.createElement(BiCamera),
+            desc4: "Look sharp and sound great with the 1080p FaceTime HD camera, three-mic array, and six-speaker sound system with Spatial Audio",
+            img5: React.createElement(BiColor),
+            desc5: "Color-matched Magic Mouse and Magic Keyboard included",
+        },
+
+    },
     // {
     //     title: "Mac studio",
     //     price: "$999",

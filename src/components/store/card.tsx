@@ -23,6 +23,7 @@ interface cardProps {
 
 const Card = ({ title, price, img, btn, link }: cardProps) => {
     const [isHovered, setIsHovered] = useState(false);
+    const [tab, setTab] = useState(false);
     return (
         <>
             <div
@@ -37,13 +38,14 @@ const Card = ({ title, price, img, btn, link }: cardProps) => {
                     animate={{ y: isHovered ? 0 : 20, opacity: isHovered ? 1 : 0, }}
                     transition={{ duration: 0.3 }}
                     className='z-20 center' >
-                    <DialogTrigger className='-translate-x-1/2 -translate-y-1/2 bg-accent text-primary-foreground shadow hover:opacity-85 hover:scale-105 active:scale-95 px-4 py-2  rounded-lg' >Learn more</DialogTrigger>
+                    <DialogTrigger
+                        onClick={() => setTab(false)}
+                        className='-translate-x-1/2 -translate-y-1/2 bg-accent text-primary-foreground shadow hover:opacity-85 hover:scale-105 active:scale-95 px-4 py-2  rounded-lg' >Learn more</DialogTrigger>
                 </motion.div>
                 <div className="flex items-end justify-between">
                     <p className='desc px-0'>from <span className='subtitle font-medium' >{price}</span></p>
                     <Link href={link} ><Button className=''>{btn}</Button>
                     </Link>
-                    
                 </div>
             </div>
         </>

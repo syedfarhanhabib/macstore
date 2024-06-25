@@ -90,7 +90,7 @@ img::selection {
   }
 
   .desc {
-    @apply text-sm font-normal leading-none tracking-normal text-muted-foreground md:px-5;
+    @apply text-sm font-normal leading-none tracking-normal text-muted-foreground;
   }
 
   .title {
@@ -115,6 +115,9 @@ img::selection {
 
   .center {
     @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+  .dialogContent {
+    @apply pt-10 flex items-center gap-4 md:gap-5;
   }
 
 }

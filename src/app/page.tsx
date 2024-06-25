@@ -49,7 +49,7 @@ const Page: React.FC = () => {
                 key={index}
               >
                 <h2 className={`leading-none text-xs md:text-sm !py-2 !px-3 ${index == 3 ? "text-zinc-950 bg-zinc-50" : "bg-zinc-950 text-zinc-50"} rounded-full w-fit`} >{item.title}</h2>
-                <p className={`title `} >{item.description}</p>
+                <p className={`title ${index == 3 ? "text-zinc-50" : " text-zinc-950"}`} >{item.description}</p>
                 <Image src={item.img} alt='' fill className='z-[-1] w-full h-full absolute left-0 bottom-0 object-cover' />
               </CarouselItem>
             ))}
