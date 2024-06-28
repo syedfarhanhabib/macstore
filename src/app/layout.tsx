@@ -3,6 +3,7 @@ import { DM_Sans, Urbanist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/navbar";
 import { Providers } from "./providers";
+import React from "react";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 const dmSans = DM_Sans({ subsets: ["latin"] });
@@ -24,7 +25,6 @@ export default function RootLayout({
           <Navbar />
           {children}
         </Providers>
-
       </body>
     </html>
   );

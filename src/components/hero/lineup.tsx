@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { lineupData } from '@/lib/data';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Lineup = () => {
     return (
@@ -36,7 +37,7 @@ const Lineup = () => {
                                             </div>
                                             <p className='desc' >{item.description}</p>
                                             <div className="buttons flex items-center gap-0">
-                                                <Button variant={"default"} className='bg-accent' >Learn more</Button>
+                                                <Link href={item.link} ><Button variant={"default"} className='bg-accent' >Learn more</Button></Link>
                                                 <Button variant={"link"} >Buy now <BiRightArrowAlt /> </Button>
                                             </div>
                                             <div className='w-full h-fit border-t border-muted-foreground/60 pt-10 mt-5 flex flex-col gap-10' >

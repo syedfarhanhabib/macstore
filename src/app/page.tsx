@@ -4,7 +4,7 @@ import { Spotlight } from '@/components/hero/spotlight';
 import { cardData, essentialsCard } from '@/lib/data';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import Image from 'next/image';
-import React, { useRef } from 'react';
+import React, { useEffect } from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -13,11 +13,22 @@ import {
 import Lineup from '@/components/hero/lineup';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import '@/css/loco.css'
+
 
 const Page: React.FC = () => {
+  useEffect(() => {
+    (
+      async () => {
+        const LocomotiveScroll = (await import('locomotive-scroll')).default
+        const locomotiveScroll = new LocomotiveScroll();
+      }
+    )()
+  }, [])
+
   return (
-    <main className="overflow-hidden">
-      <section className="hero w-full min-h-dvh pt-36 px-4 md:px-10 flex flex-col gap-5">
+    <main data-scroll-container className="overflow-hidden">
+      <section data-scroll-section className="hero w-full min-h-dvh pt-36 px-4 md:px-10 flex flex-col gap-5">
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="fill-accent"
@@ -31,6 +42,7 @@ const Page: React.FC = () => {
             Mac can do it.</h3>
         </figure>
         <video
+          data-scroll data-scroll-speed=".8"
           src="/machero.mp4"
           className="w-full h-[75vh] rounded-3xl object-cover"
           autoPlay
@@ -38,8 +50,8 @@ const Page: React.FC = () => {
           loop
         />
       </section>
-      <Categories />
-      <section className='carousel px-4 md:px-10' >
+      <Categories data-scroll-section />
+      <section data-scroll-section className='carousel px-4 md:px-10' >
         <h3 className='heading' >Get to know Mac.</h3>
         <Carousel className='px-4 md:px-10'>
           <CarouselContent className='w-full flex gap-10'>
@@ -56,8 +68,8 @@ const Page: React.FC = () => {
           </CarouselContent>
         </Carousel>
       </section>
-      <Lineup />
-      <section className="accessories min-h-dvh px-10 py-20">
+      <Lineup data-scroll-section />
+      <section data-scroll-section className="accessories min-h-dvh px-10 py-20">
         <h3 className="heading gradientText">Essentials.</h3>
         <Carousel className='px-3 md:px-5'>
           <CarouselContent className='w-full flex gap-10'>

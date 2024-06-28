@@ -1,7 +1,6 @@
 import { BiCamera, BiColor, BiDesktop, BiFullscreen } from "react-icons/bi";
 import React from "react";
 import { BsBatteryFull, BsFillThunderboltFill, BsFullscreen } from "react-icons/bs";
-import { DesktopIcon } from "@radix-ui/react-icons";
 import { CgDesktop } from "react-icons/cg";
 
 export const cardData = [
@@ -184,6 +183,7 @@ export const lineupData = [
                 name: "MacBook Air 13” and 15”",
                 processor: "M2 or M3 chip",
                 description: "Strikingly thin and fast so you can work, play, or create anywhere.",
+                link: "/imac",
                 img: "/laptop.png",
                 screen: "13.6” or 15.3”",
                 screenDesc: "Liquid Retina display with 500 nits of brightness and support for 1 billion colors",
@@ -203,6 +203,7 @@ export const lineupData = [
                 name: "MacBook Pro 14” and 16”",
                 processor: "M3, M3 Pro, or M3 Max chip",
                 description: "The most advanced Mac laptops for demanding workflows.",
+                link: "/imac",
                 img: "/laptop pro.png",
                 screen: "13.6” or 15.3”",
                 screenDesc: "Liquid Retina XDR display with 1000 nits of HDR and 600 nits of SDR brightness and up to 120Hz refresh rates",
@@ -227,6 +228,7 @@ export const lineupData = [
                 name: "iMac",
                 processor: "M3 chip",
                 description: "A stunning all-in-one desktop for creativity and productivity.",
+                link: "/imac",
                 img: "/iMac.png",
                 screen: "24”",
                 screenDesc: "4.5K Retina display with 500 nits of brightness delivers sharp and vibrant details",
@@ -246,6 +248,7 @@ export const lineupData = [
                 name: "Mac Mini",
                 processor: "M2 or M2 Pro chip",
                 description: "The most affordable Mac desktop with outsized performance.",
+                link: "/imac",
                 img: "/pc mini.png",
                 screen: "—",
                 screenDesc: "",
@@ -265,6 +268,7 @@ export const lineupData = [
                 name: "Mac Studio",
                 processor: "M2 Max or M2 Ultra chip",
                 description: "Powerful performance and extensive connectivity for pro workflows.",
+                link: "/imac",
                 img: "/pc pro.png",
                 screen: "—",
                 screenDesc: "",
@@ -284,6 +288,7 @@ export const lineupData = [
                 name: "Mac Pro",
                 processor: "M2 Ultra chip",
                 description: "A pro workstation with PCIe expansion for demanding workflows.",
+                link: "/imac",
                 img: "/mac pro.png",
                 screen: "—",
                 screenDesc: "",
@@ -308,6 +313,7 @@ export const lineupData = [
                 name: "Studio Display",
                 processor: "",
                 description: "A 5K Retina display with stellar camera and audio.",
+                link: "/imac",
                 img: "/display.png",
                 screen: "27”",
                 screenDesc: "Retina display with 5120 by 2880 pixels",
@@ -327,6 +333,7 @@ export const lineupData = [
                 name: "Pro Display XDR",
                 processor: "",
                 description: "An advanced 6K XDR display for pro workflows.",
+                link: "/imac",
                 img: "/prodisplay.png",
                 screen: "32”",
                 screenDesc: "Retina XDR display with 6016 by 3384 pixels",

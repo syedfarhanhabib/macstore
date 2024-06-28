@@ -40,7 +40,7 @@ const Card = ({ title, price, img, btn, link }: cardProps) => {
                     className='z-20 center' >
                     <DialogTrigger
                         onClick={() => setTab(false)}
-                        className='-translate-x-1/2 -translate-y-1/2 bg-accent text-primary-foreground shadow hover:opacity-85 hover:scale-105 active:scale-95 px-4 py-2  rounded-lg' >Learn more</DialogTrigger>
+                        className='-translate-x-1/2 -translate-y-1/2 bg-accent text-primary-foreground shadow hover:opacity-85 hover:scale-105 active:scale-95 px-4 py-2  rounded-full' >Learn more</DialogTrigger>
                 </motion.div>
                 <div className="flex items-end justify-between">
                     <p className='desc px-0'>from <span className='subtitle font-medium' >{price}</span></p>
