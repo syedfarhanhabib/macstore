@@ -1,6 +1,10 @@
 import { BiCamera, BiColor, BiDesktop, BiFullscreen } from "react-icons/bi";
 import React from "react";
 import { BsBatteryFull, BsFillThunderboltFill, BsFullscreen } from "react-icons/bs";
+// <<<<<<< HEAD
+// =======
+import { DesktopIcon } from "@radix-ui/react-icons";
+// >>>>>>> 089ca6213d054a7c6e7060e2b9782d63d3321652
 import { CgDesktop } from "react-icons/cg";
 
 export const cardData = [

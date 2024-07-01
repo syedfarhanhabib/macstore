@@ -28,7 +28,7 @@ const Page: React.FC = () => {
 
   return (
     <main data-scroll-container className="overflow-hidden">
-      <section data-scroll-section className="hero w-full min-h-dvh pt-36 px-4 md:px-10 flex flex-col gap-5">
+      <section data-scroll-section className="hero overflow-x-hidden w-full min-h-dvh pt-36 px-4 md:px-10 flex flex-col gap-5">
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="fill-accent"

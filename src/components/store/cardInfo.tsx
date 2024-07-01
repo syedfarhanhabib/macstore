@@ -3,11 +3,7 @@ import Image from 'next/image';
 import * as React from "react"
 import Autoplay from "embla-carousel-autoplay"
 import { Button } from '../ui/button';
-import {
-    Dialog,
-    DialogContent,
-    DialogTrigger,
-} from "@/components/ui/dialog"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
 import Card from './card';
 import { storeCard } from '@/lib/data';

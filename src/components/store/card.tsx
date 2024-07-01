@@ -3,12 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 import { Button } from '../ui/button';
 import { motion } from 'framer-motion';
-import {
-    Dialog,
-    DialogContent,
-    DialogTrigger,
-} from "@/components/ui/dialog"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
+import { DialogTrigger } from "@/components/ui/dialog"
 import Link from 'next/link';
 
 
