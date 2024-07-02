@@ -24,7 +24,7 @@ const Card = ({ title, price, img, btn, link }: cardProps) => {
             <div
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                className='relative overflow-hidden shadow-lg group hover:scale-[1.01] duration-200 p-5 w-96 h-96 flex flex-col justify-between rounded-3xl bg-muted'
+                className='relative overflow-hidden shadow-lg group hover:scale-[1.01] duration-200 p-10 w-full h-96 flex flex-col justify-between rounded-3xl bg-muted'
             >
                 <h4 className='title'>{title}</h4>
                 <Image src={img} alt={title} width={200} height={200} className='w-[80%] center object-contain' />
