@@ -11,10 +11,10 @@ const page = () => {
                 <h3 className='title gradientText' >All models. Take your pick.</h3>
                 <div className={`w-full mt-5 gap-10`} >
                     <Carousel className={``} >
-                        <CarouselContent className='w-full flex items-start gap-5 md:gap-10' >
+                        <CarouselContent className='gap-10' >
                             <CardInfo />
                         </CarouselContent>
-                        <div className="flex items-center absolute bg-black right-10 w-fit h-4 z-10 md:right-16 top-40">
+                        <div className="flex items-center absolute bg-black right-10 w-fit h-4 z-10 md:right-16 sm:top-20 lg:top-40">
                             <CarouselNext />
                             <CarouselPrevious />
                         </div>
