@@ -14,6 +14,7 @@ import Lineup from '@/components/hero/lineup';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import '@/css/loco.css'
+import Video from '@/components/hero/video';
 
 
 const Page: React.FC = () => {
@@ -28,7 +29,7 @@ const Page: React.FC = () => {
 
   return (
     <main data-scroll-container className="overflow-hidden">
-      <section data-scroll-section className="hero overflow-x-hidden w-full min-h-dvh pt-36 px-4 md:px-10 flex flex-col gap-5">
+      <section data-scroll-section className="hero overflow-x-hidden w-full min-h-dvh pt-36 px-section flex flex-col gap-5">
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="fill-accent"
@@ -41,19 +42,12 @@ const Page: React.FC = () => {
             <br />
             Mac can do it.</h3>
         </figure>
-        <video
-          data-scroll data-scroll-speed=".8"
-          src="/machero.mp4"
-          className="w-full h-[75vh] rounded-3xl object-cover"
-          autoPlay
-          muted
-          loop
-        />
+        <Video data-scroll data-scroll-speed=".8" videoSrc="/machero.mp4" />
       </section>
       <Categories data-scroll-section />
-      <section data-scroll-section className='carousel px-4 md:px-10' >
+      <section data-scroll-section className='carousel px-section' >
         <h3 className='heading' >Get to know Mac.</h3>
-        <Carousel className='px-4 md:px-10'>
+        <Carousel className='px-section'>
           <CarouselContent className='w-full flex gap-10'>
             {cardData.map((item, index) => (
               <CarouselItem
@@ -69,7 +63,7 @@ const Page: React.FC = () => {
         </Carousel>
       </section>
       <Lineup data-scroll-section />
-      <section data-scroll-section className="accessories min-h-dvh px-10 py-20">
+      <section data-scroll-section className="accessories min-h-dvh px-section py-20">
         <h3 className="heading gradientText">Essentials.</h3>
         <Carousel className='px-3 md:px-5'>
           <CarouselContent className='w-full flex gap-10'>

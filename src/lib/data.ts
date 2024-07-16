@@ -6,6 +6,7 @@ import { BsBatteryFull, BsFillThunderboltFill, BsFullscreen } from "react-icons/
 import { DesktopIcon } from "@radix-ui/react-icons";
 // >>>>>>> 089ca6213d054a7c6e7060e2b9782d63d3321652
 import { CgDesktop } from "react-icons/cg";
+import { MdCastForEducation, MdDesignServices, MdStars } from "react-icons/md";
 
 export const cardData = [
     {
@@ -356,3 +357,32 @@ export const lineupData = [
         ]
     },
 ];
+
+export const multistepData= [
+    {
+        "quest": "Tell us, what will you use your Mac for?",
+        "options": [
+            {
+                title: "Essentials",
+                desc: "Everyday stuff and entertainment",
+                icon: React.createElement(MdStars),
+            },
+            {
+                title: "Work",
+                desc: "Powering my profession",
+                icon: React.createElement(BiDesktop),
+            },
+            {
+                title: "Education",
+                desc: "Taking my studies further",
+                icon: React.createElement(MdCastForEducation),
+            },
+            {
+                title: "Creative",
+                desc: "Making & creating away from work",
+                icon: React.createElement(MdDesignServices),
+            },
+        ]
+    },
+  
+]

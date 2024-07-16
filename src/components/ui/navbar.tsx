@@ -6,7 +6,7 @@ import { Button } from './button'
 
 const Navbar = () => {
     return (
-        <header className='fixed h-14 z-50 w-full text-sm tracking-tight flex items-center justify-between px-5 py-2  backdrop-blur-lg' >
+        <header className='fixed h-14 z-50 w-full text-sm tracking-tight flex items-center justify-between px-5 py-2  backdrop-blur-3xl' >
             <nav className='flex items-center gap-5' >
                 <Link href={"/"}>
                     <svg className='fill-primary' height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg">

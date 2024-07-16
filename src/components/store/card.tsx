@@ -14,17 +14,18 @@ interface cardProps {
     img: string;
     btn: string;
     className?: string;
+    click?: () => void;
 }
 
-const Card = ({ title, price, img, btn, link }: cardProps) => {
+const Card = ({ title, price, img, btn, link, click }: cardProps) => {
     const [isHovered, setIsHovered] = useState(false);
-    const [tab, setTab] = useState(false);
+    // const [tab, setTab] = useState(false);
     return (
         <>
             <div
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                className='relative overflow-hidden shadow-lg group hover:scale-[1.01] duration-200 p-5 w-96 h-96 flex flex-col justify-between rounded-3xl bg-muted'
+                className='relative overflow-hidden shadow-lg group hover:scale-[1.01] duration-200 p-10 w-96 h-96 flex flex-col justify-between rounded-3xl bg-muted'
             >
                 <h4 className='title'>{title}</h4>
                 <Image src={img} alt={title} width={200} height={200} className='w-[80%] center object-contain' />
@@ -34,7 +35,7 @@ const Card = ({ title, price, img, btn, link }: cardProps) => {
                     transition={{ duration: 0.3 }}
                     className='z-20 center' >
                     <DialogTrigger
-                        onClick={() => setTab(false)}
+                        onClick={click}
                         className='-translate-x-1/2 -translate-y-1/2 bg-accent text-primary-foreground shadow hover:opacity-85 hover:scale-105 active:scale-95 px-4 py-2  rounded-full' >Learn more</DialogTrigger>
                 </motion.div>
                 <div className="flex items-end justify-between">

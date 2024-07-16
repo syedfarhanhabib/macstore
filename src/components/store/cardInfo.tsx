@@ -8,6 +8,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
 import Card from './card';
 import { storeCard } from '@/lib/data';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
+import DialogTabs from './dialogTabs';
+
+interface cardInfoProps {
+    isOpen: boolean;
+    onClose: () => void;
+}
 
 const CardInfo = () => {
     const plugin = React.useRef(
@@ -21,9 +27,9 @@ const CardInfo = () => {
                         <DialogContent className='h-[80vh] w-[80vw] overflow-y-scroll max-w-[90vw] max-h-[90vh]' >
                             <Tabs>
                                 <TabsList className='mb-5 max-w-[75vw] center !top-5 !-translate-y-0' >
-                                    <TabsTrigger value={item.title}>{item.title}</TabsTrigger>
+                                    <TabsTrigger value={item.title} >{item.title}</TabsTrigger>
                                     {/* <TabsTrigger value="Macbook Air">Macbook Air</TabsTrigger>
-                                    <TabsTrigger value="Macbook Pro">Macbook Pro</TabsTrigger>
+                                    <TabsTrigger value={"Macbook Pro"}>Macbook Pro</TabsTrigger>
                                     <TabsTrigger value="iMac">iMac</TabsTrigger>
                                     <TabsTrigger value="Mac mini">Mac mini</TabsTrigger>
                                     <TabsTrigger value="Mac studio">Mac studio</TabsTrigger>
@@ -119,6 +125,7 @@ const CardInfo = () => {
                                     </div>
                                 </TabsContent>
                             </Tabs>
+                            {/* <DialogTabs/> */}
                         </DialogContent>
                         <CarouselItem className='w-fit basis-100' >
                             <Card className='' title={item.data.name} price={item.data.price} img={item.data.image1} btn={"Buy"} link={item.data.link} />

@@ -90,19 +90,19 @@ img::selection {
   }
 
   .desc {
-    @apply text-sm font-normal leading-none tracking-normal text-muted-foreground;
+    @apply text-sm font-normal leading-none tracking-tight text-muted-foreground;
   }
 
   .title {
-    @apply font-medium text-primary text-xl md:text-3xl tracking-tight leading-none;
+    @apply font-medium text-primary text-xl md:text-3xl tracking-tighter leading-none;
   }
 
   .subtitle {
-    @apply font-light text-lg md:text-2xl tracking-tight leading-none;
+    @apply font-light text-lg md:text-2xl tracking-tighter leading-none;
   }
 
   .heading {
-    @apply text-3xl md:text-7xl font-medium tracking-tight pb-5;
+    @apply text-3xl md:text-7xl font-medium tracking-tighter pb-5;
   }
 
   .lineupSection {
@@ -116,8 +116,17 @@ img::selection {
   .center {
     @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
   }
+
   .dialogContent {
     @apply pt-10 flex items-center gap-4 md:gap-5;
+  }
+
+  .px-section {
+    @apply px-2 sm:px-4 md:px-6 lg:px-10;
+  }
+
+  .labelOption {
+    @apply w-full m-0 flex items-center gap-3 py-5 px-10 rounded-xl cursor-pointer bg-muted-foreground/20 border-[2px] has-[:checked]:border-accent has-[:checked]:bg-blue-500/20;
   }
 
 }
@@ -127,3 +136,39 @@ img::selection {
   width: 0px;
   background: transparent;
 } */
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #6b7280 transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    margin: 10px 0;
+    width: 60px;
+    z-index: 300;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #e5e7eb;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #6b7280;
+    border-radius: 10px;
+  }
+}
+
+html::-webkit-scrollbar {
+  margin: 10px 0;
+  width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #7c7c7c;
+  border-radius: 10px;
+}

@@ -6,9 +6,10 @@ import React from 'react';
 interface subNavProps {
     title: string;
     link: string;
+    btn?: string;
 }
 
-const SubNav = ({ title, link }: subNavProps) => {
+const SubNav = ({ title, link, btn }: subNavProps) => {
     const [scrolled, setScrolled] = React.useState(false);
 
     React.useEffect(() => {
@@ -20,15 +21,16 @@ const SubNav = ({ title, link }: subNavProps) => {
             }
         };
 
+        // Add event listener to scroll event
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
     return (
-        <nav className={`w-full h-14 ${scrolled ? 'mt-0 bg-background/5' : 'mt-14 bg-muted'} fixed backdrop-blur-lg py-2 z-[99999999] px-10 sm:px-20 lg:px-48 flex border-b border-muted items-center justify-between`} >
+        <nav className={`w-full h-14 ${scrolled ? 'mt-0 bg-background/5' : 'mt-14 bg-muted'} fixed backdrop-blur-lg py-2 z-[99999999] px-10 sm:px-32 lg:px-40 flex border-b border-muted items-center justify-between`} >
             <h3 className='subtitle' >{title}</h3>
-            <Link href={link} ><Button size={"sm"} className='bg-accent' >Buy</Button></Link>
+            <Link href={link} ><Button size={"sm"} className='bg-accent' >{btn}</Button></Link>
         </nav>
     );
 };

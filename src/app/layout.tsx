@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/ui/navbar";
 import { Providers } from "./providers";
 import React from "react";
+import { GeistSans } from 'geist/font/sans';
+
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 const dmSans = DM_Sans({ subsets: ["latin"] });
@@ -20,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${urbanist.className}`}>
+      <body className={`${GeistSans.className} scrollbar-thin max-w-screen-2xl mx-auto `}>
         <Providers>
           <Navbar />
           {children}
