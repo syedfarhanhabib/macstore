@@ -127,7 +127,7 @@ const CardInfo = () => {
                             </Tabs>
                             {/* <DialogTabs/> */}
                         </DialogContent>
-                        <CarouselItem className='basis-10/12 sm:basis-1/2 lg:basis-1/4' >
+                        <CarouselItem className='w-1/3 shrink-0 basis-[28rem] grow-0' >
                             <Card className='' title={item.data.name} price={item.data.price} img={item.data.image1} btn={"Buy"} link={item.data.link} />
                         </CarouselItem>
                     </Dialog>
