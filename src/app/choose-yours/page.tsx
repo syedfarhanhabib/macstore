@@ -1,5 +1,5 @@
 'use client';
-import  MultistepForm  from '@/components/component/multistep-form';
+import MultistepForm from '@/components/component/multistep-form';
 import QuizForm from '@/components/component/quizForm';
 import SubNav from '@/components/ui/subNav'
 import React, { useState } from 'react'

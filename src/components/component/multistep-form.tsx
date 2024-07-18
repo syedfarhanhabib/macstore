@@ -1,36 +1,54 @@
-// components/MultiStepForm.tsx
 import React, { useState } from "react";
 import { Button } from "../ui/button";
 import { FaArrowLeft } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Progress } from "../ui/progress";
 
-
 interface Step {
   question: string;
   options: string[];
 }
 
-// const steps: Step[] = [
-//   { question: "Tell us, what will you use your Mac for?", options: ["Essentials", "Work", "Education", "Creative"] },
-//   { question: "Step 2: Choose an option", options: [{ title: "Option A", icon: "", desc: "" }, "Option B", "Option C"] },
-//   { question: "Step 3: Choose an option", options: ["Option X", "Option Y", "Option Z"] },
-//   { question: "Step 4: Choose an option", options: ["Option M", "Option N", "Option O"] },
-// ];
 const steps: Step[] = [
-  { question: "Tell us, what will you use your Mac for?", options: ["Essentials", "Work", "Education", "Creative"] },
-  { question: "Step 2: Choose an option", options: ["Option A", "Option B", "Option C"] },
-  { question: "Step 3: Choose an option", options: ["Option X", "Option Y", "Option Z"] },
-  { question: "Step 4: Choose an option", options: ["Option M", "Option N", "Option O"] },
+  {
+    question: "Tell us, what will you use your Mac for?"
+    , options: [
+      "Essentials",
+      "Work",
+      "Education",
+      "Creative"
+    ]
+  },
+  {
+    question: "And where will you use your Mac?",
+    options: [
+      "Always in a fixed place, like my desk",
+      "Around my home",
+      "Out and about",
+    ]
+  },
+  {
+    question: "Lastly, do you have a budget in mind?",
+    options: [
+      "Upto $1,500",
+      "Upto $2,500",
+      "Upto $3,000",
+      "$4,000 and over",
+    ]
+  },
 ];
 
 const MultiStepForm = () => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
   const [selections, setSelections] = useState<(string | null)[]>(Array(steps.length).fill(null));
 
   const handleOptionChange = (option: string) => {
     const newSelections = [...selections];
-    newSelections[currentStep] = option;
+    if (newSelections[currentStep] === option) {
+      newSelections[currentStep] = null; // Deselect if already selected
+    } else {
+      newSelections[currentStep] = option; // Select new value
+    }
     setSelections(newSelections);
   };
 
@@ -47,39 +65,38 @@ const MultiStepForm = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-muted rounded-3xl" >
-      <div className='flex flex-col justify-between relative p-10 max-w-[85vw] min-h-[85vh] mx-auto px-10 sm:px-32 lg:px-64' >
+    <section className="relative overflow-hidden bg-muted rounded-3xl">
+      <div className='flex flex-col justify-between relative p-10 max-w-[85vw] min-h-[85vh] mx-auto px-10 sm:px-32 lg:px-64'>
         <div className="top">
           <motion.div
             initial={{ opacity: 0, y: '20%', scaleY: '90%' }}
-            whileInView={{ opacity: 1, y: '0%', scaleY: '100%', }}
+            whileInView={{ opacity: 1, y: '0%', scaleY: '100%' }}
             viewport={{ once: true }}
-            className=" grid gap-5 mb-5 ">
+            className="grid gap-5 mb-5">
             {currentStep === 0 && (
               <p className="desc">Answer a few questions to get a personalized recommendation.</p>
             )}
             <Progress value={(currentStep / 3) * 100} />
           </motion.div>
           <h2 className="title mb-5">{steps[currentStep].question}</h2>
-          <form className="grid lg:grid-cols-2 gap-5" >
+          <form className={`grid ${currentStep === 0 || currentStep === 2 ? "lg:grid-cols-2" : ""} gap-5`}>
             {steps[currentStep].options.map((option) => (
-              <React.Fragment key={option} >
+              <React.Fragment key={option}>
                 <div className="">
                   <label className="labelOption">
                     <input
                       type="radio"
-                      name="option"
+                      name={`option-${currentStep}`}
                       value={option}
                       checked={selections[currentStep] === option}
-                      onChange={() => handleOptionChange(option)}
+                      onClick={() => handleOptionChange(option)}
+                      readOnly
                       className="form-radio hidden"
                     />
                     <span className="subtitle">{option}</span>
-
                   </label>
                 </div>
               </React.Fragment>
-
             ))}
           </form>
         </div>
@@ -104,11 +121,15 @@ const MultiStepForm = () => {
               whileInView={{ opacity: 1, scaleX: '100%' }}
               viewport={{ once: true }}
             >
-              {selections[currentStep] ? "Next" : "Please select an option"}
+              {selections[currentStep] ? "Next" : "Select an option"}
             </motion.h3>
           </Button>
         </div>
-        {/* <h3 className="mt-4 text-xl">Selected: {selections[currentStep]}</h3> */}
+        <section className="answers flex gap-5">
+          <Button size={"sm"} className="w-fit">{selections[0]}</Button>
+          <Button size={"sm"} className="w-fit">{selections[1]}</Button>
+          <Button size={"sm"} className="w-fit">{selections[2]}</Button>
+        </section>
       </div>
     </section>
   );
