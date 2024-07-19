@@ -11,7 +11,7 @@ const page = () => {
             <section className='pt-36 px-section min-h-dvh'>
                 <h1 className='heading text-center' >iMac.</h1>
             </section>
-            <section className='w-full pt-32 px-section min-h-dvh py-32 '>
+            <section className='w-full pt-32 px-section min-h-dvh pb-5 '>
                 {/* <QuizForm/> */}
                 {/* <MultistepForm /> */}
                 <GptForm />

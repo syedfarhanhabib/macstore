@@ -35,9 +35,15 @@ const steps: Step[] = [
 ];
 
 const recommendationMap: { [key: string]: string } = {
-    "Work,Fixed,Upto $2,500": "Mac Studio",
-    "Education,Around my home,Upto $1,500": "Macbook Air",
-    "Creative,Fixed,Upto $2,500": "Mac Mini",
+    "Work,Fixed,Upto $1,500": "Mac Mini",
+    "Education,Fixed,Upto $1,500": "Macbook Air",
+    "Essentials,Fixed,Upto $1,500": "iMac",
+    "Creative,Fixed,Upto $1,500": "Mac Studio",
+    "Work,Around my home,Upto $3,500": "Macbook Pro",
+    "Education,Fixed,Upto $3,000": "Mac Pro",
+    "Essentials,Out and about,Upto $3,500 ": "Mac Studo",
+    "Creative,Around my home,Upto $1,500": "Macbook Pro",
+    "Creative,Fixed,Upto $2,500": "Pro Display XDR",
 };
 
 const GptForm: React.FC = () => {
@@ -85,7 +91,7 @@ const GptForm: React.FC = () => {
                                 Answer a few questions to get a personalized recommendation.
                             </p>
                         )}
-                        <Progress value={(currentStep / steps.length) * 100} />
+                        <Progress value={(currentStep / 3) * 100} />
                     </motion.div>
                     <h2 className="title mb-5">{steps[currentStep].question}</h2>
                     {currentStep < steps.length - 1 ? (
@@ -125,6 +131,11 @@ const GptForm: React.FC = () => {
                             </motion.div>
                         </div>
                     )}
+                </div>
+                <div className="answers flex flex-wrap gap-1">
+                    <Button size={"sm"} variant={"outline"} >{selections[0]}</Button>
+                    <Button size={"sm"} variant={"outline"} >{selections[1]}</Button>
+                    <Button size={"sm"} variant={"outline"}>{selections[2]}</Button>
                 </div>
                 <div className="buttons flex justify-between items-center mt-4">
                     <Button
