@@ -185,7 +185,7 @@ export const lineupData = [
         "title": "Laptops",
         "data": [
             {
-                name: "MacBook Air 13” and 15”",
+                name: "Macbook Air",
                 processor: "M2 or M3 chip",
                 description: "Strikingly thin and fast so you can work, play, or create anywhere.",
                 link: "/imac",
@@ -205,7 +205,7 @@ export const lineupData = [
                 cameraDesc: "",
             },
             {
-                name: "MacBook Pro 14” and 16”",
+                name: "MacBook Pro",
                 processor: "M3, M3 Pro, or M3 Max chip",
                 description: "The most advanced Mac laptops for demanding workflows.",
                 link: "/imac",
@@ -358,7 +358,7 @@ export const lineupData = [
     },
 ];
 
-export const multistepData= [
+export const multistepData = [
     {
         "quest": "Tell us, what will you use your Mac for?",
         "options": [
@@ -384,5 +384,5 @@ export const multistepData= [
             },
         ]
     },
-  
-]
+
+];
