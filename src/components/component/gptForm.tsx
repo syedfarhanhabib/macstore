@@ -21,12 +21,7 @@ const steps: Step[] = [
     },
     {
         question: "Lastly, do you have a budget in mind?",
-        options: [
-            "Upto $1,500",
-            "Upto $2,500",
-            "Upto $3,000",
-            "$4,000 and over",
-        ],
+        options: ["Upto $1,500", "Upto $2,500", "Upto $3,000", "$4,000 and over",],
     },
     {
         question: "Here are your personalized recommendations",
@@ -39,17 +34,17 @@ const recommendationMap: { [key: string]: string } = {
     "Education,Fixed,Upto $1,500": "Macbook Air",
     "Essentials,Fixed,Upto $1,500": "iMac",
     "Creative,Fixed,Upto $1,500": "Mac Studio",
-    "Work,Around my home,Upto $3,500": "Macbook Pro",
-    "Education,Fixed,Upto $3,000": "Mac Pro",
+    "Work,Around my home,Upto $3,000": "Macbook Pro",
+    "Work,Fixed,$4,000 and over": "Mac Pro",
     "Essentials,Out and about,Upto $3,500 ": "Mac Studo",
-    "Creative,Around my home,Upto $1,500": "Macbook Pro",
+    "Creative,Around my home,Upto $2,500": "Macbook Pro",
     "Creative,Fixed,Upto $2,500": "Pro Display XDR",
 };
 
 const GptForm: React.FC = () => {
     const [currentStep, setCurrentStep] = useState(0);
     const [selections, setSelections] = useState<(string | null)[]>(
-        Array(steps.length - 1).fill(null)
+        Array(steps.length - 1).fill("-")
     );
     const [recommendationTitle, setRecommendationTitle] = useState("iMac");
 

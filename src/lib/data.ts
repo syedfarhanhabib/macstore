@@ -208,7 +208,7 @@ export const lineupData = [
                 name: "MacBook Pro",
                 processor: "M3, M3 Pro, or M3 Max chip",
                 description: "The most advanced Mac laptops for demanding workflows.",
-                link: "/imac",
+                link: "/macbook-plus",
                 img: "/laptop pro.png",
                 screen: "13.6” or 15.3”",
                 screenDesc: "Liquid Retina XDR display with 1000 nits of HDR and 600 nits of SDR brightness and up to 120Hz refresh rates",
