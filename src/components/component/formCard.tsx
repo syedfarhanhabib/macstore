@@ -15,7 +15,7 @@ const FormCard = ({ itemName }: FormCardProps) => {
     }
 
     return (
-        <section className='flex flex-col md:flex-row items-start gap-5 bg-muted-foreground/20 p-10 rounded-2xl'>
+        <section className='flex flex-col md:flex-row items-start gap-5 bg-background p-10 rounded-2xl'>
             <Image src={product.img} alt={itemName} width={300} height={300} className='w-full md:w-1/3  object-contain' />
             <div className="right flex flex-col gap-5">
                 <div className='flex flex-col md:flex-row gap-5' >
