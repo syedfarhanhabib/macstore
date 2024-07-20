@@ -94,7 +94,7 @@ img::selection {
   }
 
   .title {
-    @apply font-medium text-primary text-xl md:text-3xl tracking-tighter leading-none;
+    @apply font-medium text-primary text-2xl md:text-4xl tracking-tighter leading-none;
   }
 
   .subtitle {
