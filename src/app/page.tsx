@@ -101,6 +101,9 @@ const Page: React.FC = () => {
           </CarouselContent>
         </Carousel>
       </section>
+      <footer>
+        <h1>syed farhan habib</h1>
+      </footer>
     </main >
   );
 };
