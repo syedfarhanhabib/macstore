@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link';
 import { Button } from './button';
-import React from 'react';
+import React, { useState } from 'react';
 
 interface subNavProps {
     title: string;
@@ -10,7 +10,7 @@ interface subNavProps {
 }
 
 const SubNav = ({ title, link, btn }: subNavProps) => {
-    const [scrolled, setScrolled] = React.useState(false);
+    const [scrolled, setScrolled] = useState<boolean>(false);
 
     React.useEffect(() => {
         const handleScroll = () => {
