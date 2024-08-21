@@ -62,6 +62,22 @@ const Page: React.FC = () => {
           </CarouselContent>
         </Carousel>
       </section>
+      <section data-scroll-section className="choose flex items-center justify-center px-section h-dvh" >
+        <div className="h-[80%] w-[80%] bg-muted rounded-3xl p-20 gap-5 flex flex-col lg:flex-row items-center justify-between ">
+          <div className="left grid gap-5 w-1/2">
+            <p className="text-center title lg:text-left">
+              With its sleek design, powerful processors, and built-in security.
+            </p>
+            <Link href="/choose-yours" className='mx-auto lg:mx-0'>
+              <Button variant={"default"} className='bg-accent text-background' >Learn more</Button>
+            </Link>
+          </div>
+          <div className="right">
+            <Image src={"/help-choose.jpg"} width={500} height={500} alt='help-choose' className='m-auto' />
+          </div>
+        </div>
+
+      </section>
       <Lineup data-scroll-section />
       <section data-scroll-section className="accessories min-h-dvh px-section py-20">
         <h3 className="heading gradientText">Essentials.</h3>
