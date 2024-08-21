@@ -4,11 +4,11 @@ import React from 'react'
 const page = () => {
     return (
         <main>
-            <SubNav title='iMac' link='/' btn='Buy' />
-            <section className='pt-36 px-section min-h-dvh'>
+            <SubNav title='iMac' btnLink='/' btn='Buy' btn1='My pc' link1='#my-pc' btn2='This' link2='#this'  />
+            <section id='my-pc' className='pt-36 px-section min-h-dvh'>
                 <h1 className='heading text-center' >iMac.</h1>
             </section>
-            <section className='pt-20 px-section min-h-dvh'>
+            <section id='this' className='pt-20 px-section min-h-dvh'>
                 <h1 className='heading text-center' >iMac.</h1>
             </section>
 
