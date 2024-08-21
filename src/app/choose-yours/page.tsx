@@ -1,5 +1,4 @@
 'use client';
-import GptForm from '@/components/component/gptForm';
 import MultistepForm from '@/components/component/multistep-form';
 import QuizForm from '@/components/component/quizForm';
 import SubNav from '@/components/ui/subNav'
@@ -13,8 +12,7 @@ const page = () => {
             </section>
             <section className='w-full pt-32 px-section min-h-dvh pb-5 '>
                 {/* <QuizForm/> */}
-                {/* <MultistepForm /> */}
-                <GptForm />
+                <MultistepForm />
             </section>
         </main>
     )

@@ -164,8 +164,7 @@ const MultiStepForm = () => {
               </motion.h3>
             </Button>
           )}
-
-          {currentStep === 2 && (
+          {[2].includes(currentStep) && (
             <Button
               type="button"
               onClick={nextStep}
