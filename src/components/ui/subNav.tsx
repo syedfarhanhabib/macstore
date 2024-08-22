@@ -1,5 +1,4 @@
-'use client'
-
+'use client';
 import Link from 'next/link';
 import { Button } from './button';
 import React, { useState, useEffect } from 'react';
@@ -19,16 +18,19 @@ const SubNav = ({ title, navLinks, btnLink, btnLabel }: SubNavProps) => {
     const [activeSection, setActiveSection] = useState<string>(navLinks[0]?.href || '');
 
     const handleScroll = () => {
-        const sections = document.querySelectorAll('section[id]');
+        const sections = document.querySelectorAll<HTMLElement>('section[id]');
         let currentSection = navLinks[0]?.href || '';
 
         sections.forEach((section) => {
             const sectionTop = section.getBoundingClientRect().top;
             const sectionHeight = section.offsetHeight;
-            const offset = 100; // Adjust this offset based on your sticky nav height and desired trigger point
+            const offset = 100;
 
             if (sectionTop <= offset && sectionTop + sectionHeight > offset) {
-                currentSection = `#${section.getAttribute('id')}`;
+                const id = section.getAttribute('id');
+                if (id) {
+                    currentSection = `#${id}`;
+                }
             }
         });
 

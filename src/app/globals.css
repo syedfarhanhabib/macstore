@@ -128,8 +128,9 @@ img::selection {
   .labelOption {
     @apply w-full m-0 flex items-center gap-3 py-5 px-10 rounded-xl cursor-pointer bg-background border-[2px] border-transparent has-[:checked]:border-accent has-[:checked]:bg-blue-500/20;
   }
+
   .activeLink {
-    @apply relative after:absolute after:w-3 after:h-1 after:left-1/2 after:-translate-x-1/2 after:rounded-full after:bg-green-500 after:-bottom-2;
+    @apply relative after:absolute after:w-3 after:h-1 after:left-1/2 after:-translate-x-1/2 after:rounded-full after:bg-green-500 after:-bottom-2 after:shadow-md after:shadow-green-500;
   }
 
 }
@@ -169,6 +170,9 @@ html::-webkit-scrollbar {
 
 html::-webkit-scrollbar-track {
   background: transparent;
+}
+html{
+  scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar-thumb {

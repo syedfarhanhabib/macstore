@@ -21,7 +21,7 @@ const Page: React.FC = () => {
 
   return (
     <main>
-      <SubNav title='Macbook Plus' link='/' btn='Buy' />
+      <SubNav title='Macbook Plus' navLinks={[]} btnLink='/' btnLabel='Buy' />
       <section className='pt-36 min-h-dvh overflow-x-hidden px-section'>
         <h3 className='desc text-center'>Exclusive</h3>
         <h1 className='text-center heading gradientText'>
