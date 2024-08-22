@@ -57,7 +57,7 @@ const SubNav = ({ title, navLinks, btnLink, btnLabel }: SubNavProps) => {
         >
             <h3 className='subtitle'>{title}</h3>
             <section className='flex items-center gap-2'>
-                {navLinks.map((link, index) => (
+                {navLinks && navLinks.map((link, index) => (
                     <Link key={index} href={link.href}>
                         <Button
                             size="sm"
