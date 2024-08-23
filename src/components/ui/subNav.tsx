@@ -58,7 +58,7 @@ const SubNav = ({ title, navLinks, btnLink, btnLabel }: SubNavProps) => {
     return (
         // h-14
         <header className={`w-full h-14 ${scrolled ? 'mt-0 bg-background/5' : 'mt-14 bg-muted'
-            } fixed backdrop-blur-3xl py-2 z-[99999999] px-10 sm:px-32 lg:px-40 flex flex-col border-b border-muted items-start justify-between transition-all duration-300 ${dropdownOpen ? "max-md:h-48" : "h-14"}`}>
+            } fixed backdrop-blur-3xl py-2 z-[9] px-10 sm:px-32 lg:px-40 flex flex-col border-b border-muted items-start justify-between transition-all duration-300 ${dropdownOpen ? "max-md:h-48" : "h-14"}`}>
             <nav className='flex items-center justify-between w-full'>
                 <h3 className='subtitle'>{title}</h3>
                 <section className='flex items-center gap-2'>

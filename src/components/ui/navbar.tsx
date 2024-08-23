@@ -5,11 +5,12 @@ import { BiCart, BiMenu, BiSearch } from 'react-icons/bi'
 import { IoReorderTwoOutline } from "react-icons/io5";
 import ThemeSwitch from './theme'
 import { Button } from './button'
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
     const [menu, setMenu] = useState<boolean>(false)
     return (
-        <header className={`fixed h-14 z-50 w-full text-sm tracking-tight flex flex-col justify-between px-5 py-2  backdrop-blur-3xl ${menu ? "h-48" : ""}`} >
+        <header className={`fixed h-14 z-50 w-full text-sm tracking-tight flex flex-col justify-between px-5 py-2  backdrop-blur-3xl transition-all duration-300 ${menu ? "h-48 z-10" : "z-[8]"}`} >
             <div className="wrapper flex items-center justify-between">
                 <nav className='flex items-center gap-5' >
                     <Link id='logo' href={"/"}>
@@ -38,11 +39,14 @@ const Navbar = () => {
                 </nav>
             </div>
             {menu && (
-               <nav className='flex flex-col gap-2 py-5'>
+                <motion.nav
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    className='flex flex-col gap-2 py-5 transition-all duration-300'>
                     <Link href={"/store"} ><Button variant={"link"} size={"sm"}>Store</Button></Link>
                     <Link href={"/"} ><Button variant={"link"} size={"sm"}>Accesories</Button></Link>
                     <Link href={"/"} ><Button variant={"link"} size={"sm"}>Support</Button></Link>
-                </nav>
+                </motion.nav>
             )}
         </header>
     )
