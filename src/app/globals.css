@@ -130,7 +130,7 @@ img::selection {
   }
 
   .activeLink {
-    @apply relative after:absolute after:w-3 after:h-1 after:left-1/2 after:-translate-x-1/2 after:rounded-full after:bg-green-500 after:-bottom-2 after:shadow-md after:shadow-green-500;
+    @apply relative after:absolute after:w-[0.4rem] after:h-[0.4rem] md:after:left-1/2 md:after:-translate-x-1/2 after:rounded-full after:bg-green-500 md:after:-bottom-3 after:max-md:-right-4 after:shadow-md after:shadow-green-500;
   }
 
 }
@@ -171,7 +171,8 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-track {
   background: transparent;
 }
-html{
+
+html {
   scroll-behavior: smooth;
 }
 
