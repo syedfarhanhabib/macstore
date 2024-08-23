@@ -34,7 +34,7 @@ const page = () => {
                 <div className="grid absolute lg:-mt-60  text-center w-full py-5">
                     <h5 className='subtitle'>Mac mini</h5>
                     <h1 className='gradientText heading leading-none' >More muscle. <br /> More hustle.</h1>
-                    <p className='lg:px-60 px-10 text-xl desc' >Mac mini with M2 packs the speed you need to get more done faster. And M2 Pro takes it to a whole new level — bringing a pro chip to Mac mini for the first time. Add to that a versatile array of ports and you’ve got a desktop ready to flex in any setup, no matter which chip you choose.</p>
+                    <p className='lg:px-60 px-10 desc' >Mac mini with M2 packs the speed you need to get more done faster. And M2 Pro takes it to a whole new level — bringing a pro chip to Mac mini for the first time. Add to that a versatile array of ports and you’ve got a desktop ready to flex in any setup, no matter which chip you choose.</p>
                     <Button variant={"secondary"} className='mx-auto mt-2'>From $599</Button>
                 </div>
             </section>
@@ -64,8 +64,8 @@ const page = () => {
                 <div className="card2 relative w-full h-[80vh] bg-muted p-10 rounded-3xl bg-gradient-to-br from-pink-700 to-yellow-700">
                     <h5 className='subtitle' >Compatibility</h5>
                     <h1 className='heading pt-5 lg:pt-20'>Mini does that.</h1>
-                    <p className='subtitle w-1/2' >With macOS, your go‑to apps run lightning fast on Mac mini — from Microsoft 365 to Adobe Creative Cloud to Zoom. And thousands of apps are optimized for M2 and M2 Pro.</p>
-                    <Image src={"/mini-compatibility.png"} height={1000} width={2000} alt='' className='h-full w-fit object-contain absolute right-0 top-0' />
+                    <p className='subtitle md:w-1/2' >With macOS, your go‑to apps run lightning fast on Mac mini — from Microsoft 365 to Adobe Creative Cloud to Zoom. And thousands of apps are optimized for M2 and M2 Pro.</p>
+                    <Image src={"/mini-compatibility.png"} height={1000} width={2000} alt='' className='h-fit w-fit object-contain absolute right-0 bottom-0 md:top-0' />
                 </div>
                 <div className="card3 w-full grid grid-cols-12 gap-5 lg:gap-10">
                     <div className="p-10 flex flex-col justify-between bg-gradient-to-br from-purple-950 to-purple-500 h-[90vh] md:col-span-8 col-span-12 rounded-3xl">
