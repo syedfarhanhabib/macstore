@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { Button } from './button';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -20,7 +20,8 @@ interface SubNavProps {
 const SubNav = ({ title, navLinks, btnLink, btnLabel }: SubNavProps) => {
     const [scrolled, setScrolled] = useState<boolean>(false);
     const [activeSection, setActiveSection] = useState<string>(navLinks[0]?.href || '');
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+    const navRef = useRef<HTMLDivElement>(null)
 
     const handleScroll = () => {
         const sections = document.querySelectorAll<HTMLElement>('section[id]');
@@ -49,6 +50,19 @@ const SubNav = ({ title, navLinks, btnLink, btnLabel }: SubNavProps) => {
     };
 
     useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (navRef.current && !navRef.current.contains(event.target as Node)) {
+                setDropdownOpen(false);
+            }
+        };
+        document.addEventListener('click', handleClickOutside);
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
+
+
+    useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -57,8 +71,10 @@ const SubNav = ({ title, navLinks, btnLink, btnLabel }: SubNavProps) => {
 
     return (
         // h-14
-        <header className={`w-full h-14 ${scrolled ? 'mt-0 bg-background/5' : 'mt-14 bg-muted'
-            } fixed backdrop-blur-3xl py-2 z-[9] px-10 sm:px-32 lg:px-40 flex flex-col border-b border-muted items-start justify-between transition-all duration-300 ${dropdownOpen ? "max-md:h-48" : "h-14"}`}>
+        <header
+            ref={navRef}
+            className={`w-full h-14 ${scrolled ? 'mt-0 bg-background/5' : 'mt-14 bg-muted'
+                } fixed backdrop-blur-3xl py-2 z-[9] px-10 sm:px-32 lg:px-40 flex flex-col border-b border-muted items-start justify-between transition-all duration-300 ${dropdownOpen ? "max-md:h-48" : "h-14"}`}>
             <nav className='flex items-center justify-between w-full'>
                 <h3 className='subtitle'>{title}</h3>
                 <section className='flex items-center gap-2'>
