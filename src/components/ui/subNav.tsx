@@ -74,8 +74,8 @@ const SubNav = ({ title, navLinks, btnLink, btnLabel }: SubNavProps) => {
         <header
             ref={navRef}
             className={`w-full h-14 ${scrolled ? 'mt-0 bg-background/5' : 'mt-14 bg-muted'
-                } fixed backdrop-blur-3xl py-2 z-[9] px-10 sm:px-32 lg:px-40 flex flex-col border-b border-muted items-start justify-between transition-all duration-300 ${dropdownOpen ? "max-md:h-48" : "h-14"}`}>
-            <nav className='flex items-center justify-between w-full'>
+                } fixed backdrop-blur-3xl z-[9] px-10 sm:px-32 lg:px-40  border-b border-muted grid transition-all py- duration-300 ${dropdownOpen ? "max-md:h-48" : "h-14"}`}>
+            <nav className='flex items-center justify-between w-full bg-slate-50/0'>
                 <h3 className='subtitle'>{title}</h3>
                 <section className='flex items-center gap-2'>
                     <div className="navLinks md:flex gap-2 hidden">
