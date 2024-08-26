@@ -1,5 +1,6 @@
 'use client';
 import SubNav from '@/components/ui/subNav';
+import ThemeSwitch from '@/components/ui/theme';
 import React from 'react';
 
 const Page: React.FC = () => {
@@ -21,6 +22,7 @@ const Page: React.FC = () => {
 
   return (
     <main>
+      <ThemeSwitch defaultTheme='dark' />
       <SubNav title='Macbook Plus' navLinks={[]} btnLink='/' btnLabel='Buy' />
       <section className='pt-36 min-h-dvh overflow-x-hidden px-section'>
         <h3 className='desc text-center'>Exclusive</h3>

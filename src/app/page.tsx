@@ -15,6 +15,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import '@/css/loco.css'
 import Video from '@/components/hero/video';
+import ThemeSwitch from '@/components/ui/theme';
 
 
 const Page: React.FC = () => {
@@ -29,6 +30,7 @@ const Page: React.FC = () => {
 
   return (
     <main data-scroll-container className="overflow-hidden">
+      <ThemeSwitch defaultTheme="light" />
       <section data-scroll-section className="hero overflow-x-hidden w-full min-h-dvh pt-36 px-section flex flex-col gap-5">
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"

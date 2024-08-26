@@ -1,4 +1,5 @@
 import SubNav from '@/components/ui/subNav'
+import ThemeSwitch from '@/components/ui/theme';
 import React from 'react'
 
 const page = () => {
@@ -8,6 +9,7 @@ const page = () => {
     ];
     return (
         <main>
+            <ThemeSwitch defaultTheme='dark' />
             <SubNav title='iMac' navLinks={navLinks} btnLink='/' btnLabel='Buy' />
             <section id='my-pc' className='pt-36 px-section min-h-dvh'>
                 <h1 className='heading text-center' >iMac.</h1>

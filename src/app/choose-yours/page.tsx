@@ -2,6 +2,7 @@
 import MultistepForm from '@/components/component/multistep-form';
 import QuizForm from '@/components/component/quizForm';
 import SubNav from '@/components/ui/subNav'
+import ThemeSwitch from '@/components/ui/theme';
 import React, { useState } from 'react'
 const page = () => {
     const navLinks = [
@@ -10,6 +11,7 @@ const page = () => {
     ]
     return (
         <main>
+            <ThemeSwitch defaultTheme="light" />
             <SubNav navLinks={[]} title='Choose yours' btnLink='/' btnLabel='Shop' />
             <section id='info' className='pt-36 px-section min-h-dvh'>
                 <h1 className='heading text-center' >iMac.</h1>

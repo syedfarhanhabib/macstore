@@ -5,6 +5,7 @@ import SubNav from "@/components/ui/subNav";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import ThemeSwitch from "@/components/ui/theme";
 
 const Page = () => {
     const navLinks = [
@@ -75,6 +76,7 @@ const Page = () => {
 
     return (
         <main>
+        <ThemeSwitch defaultTheme="light" />
             <SubNav title="Mac mini" navLinks={navLinks} />
             <section className="pb-10 pt-40 px-section flex flex-col md:flex-row">
                 <motion.div
@@ -82,7 +84,6 @@ const Page = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5 }}
-                // style={{ position: 'sticky', top: '10vh' }}
                 >
                     <Image src={"/store-mini.png"} width={500} height={100} alt="" className="object-contain w-fit h-fit center !top-0" />
                     <Button size={"sm"} variant={"secondary"} className="center mt-12 md:!mt-44">+view gallery</Button>
@@ -123,15 +124,14 @@ const Page = () => {
                     ))}
                 </div>
             </section>
-            <section className="btm flex justify-between w-full fixed bottom-0 left-1/2 bg-muted -translate-x-1/2  px-section py-5 border-t border-muted">
-                <div className="flex flex-col">
-                    <h3 className="subtitle">Delivery:</h3>
-                    <p className="desc" >In Stock<br />Free Shipping</p>
+            <section className="btm flex justify-between rounded-xl w-3/4 md:w-1/2 fixed bottom-3  bg-muted/30 backdrop-blur-3xl left-1/2 -translate-x-1/2  px-section py-5 border-[1px] border-muted">
+                <div className="">
+                    <span className="desc" >Total price</span>
+                    <h2 className="subtitle md:title" >{formattedPrice}</h2>
                 </div>
                 <Button size={"default"} variant="default">
                     Proceed to checkout
                 </Button>
-                <h2 className="title">{formattedPrice}</h2>
             </section>
         </main>
     );

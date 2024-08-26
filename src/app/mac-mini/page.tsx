@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import SubNav from '@/components/ui/subNav'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Tag from '@/components/ui/tag'
+import ThemeSwitch from '@/components/ui/theme'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
@@ -22,6 +23,7 @@ const page = () => {
     ];
     return (
         <main className='pb-40 light'>
+            <ThemeSwitch defaultTheme='dark' />
             <SubNav
                 title="Mac mini"
                 navLinks={navLinks}
@@ -31,7 +33,7 @@ const page = () => {
             <Tag text="Buy Mac mini starting at $499 with education savings. And now through 9/30, get a $100 gift card. Δ " />
             <section id='overview' className=' min-h-dvh max-h-max sm:h-[120vh] md:h-[140vh] lg:h-[160vh] flex flex-col justify-between items-center pb-10 pt-36' >
                 <Image src={"/mini-cover.jpg"} height={1000} width={1000} alt='mini' className='w-full object-contain saturate-[1.25] contrast-[.93] z-0' />
-                <div className="grid lg:-mt-60 z-2 text-center w-full py-5">
+                <div className="grid lg:-mt-60 z-[3] text-center w-full py-5">
                     <h5 className='subtitle'>Mac mini</h5>
                     <h1 className='gradientText heading leading-none' >More muscle. <br /> More hustle.</h1>
                     <p className='lg:px-60 px-10 desc' >Mac mini with M2 packs the speed you need to get more done faster. And M2 Pro takes it to a whole new level — bringing a pro chip to Mac mini for the first time. Add to that a versatile array of ports and you’ve got a desktop ready to flex in any setup, no matter which chip you choose.</p>

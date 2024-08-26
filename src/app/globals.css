@@ -94,7 +94,7 @@ img::selection {
   }
 
   .title {
-    @apply font-semibold text-primary text-2xl md:text-3xl tracking-tighter leading-none;
+    @apply font-semibold text-2xl md:text-3xl tracking-tighter leading-none;
   }
 
   .subtitle {
