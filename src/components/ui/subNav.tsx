@@ -19,18 +19,18 @@ interface SubNavProps {
 
 const SubNav = ({ title, navLinks, btnLink, btnLabel }: SubNavProps) => {
     const [scrolled, setScrolled] = useState<boolean>(false);
-    const [activeSection, setActiveSection] = useState<string>(navLinks[0]?.href || '');
+    const [activeSection, setActiveSection] = useState<string>('');
     const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
     const navRef = useRef<HTMLDivElement>(null)
 
     const handleScroll = () => {
         const sections = document.querySelectorAll<HTMLElement>('section[id]');
-        let currentSection = navLinks[0]?.href || '';
+        let currentSection = '';
 
         sections.forEach((section) => {
             const sectionTop = section.getBoundingClientRect().top;
             const sectionHeight = section.offsetHeight;
-            const offset = 100;
+            const offset = 110;
 
             if (sectionTop <= offset && sectionTop + sectionHeight > offset) {
                 const id = section.getAttribute('id');

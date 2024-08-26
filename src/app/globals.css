@@ -126,7 +126,7 @@ img::selection {
   }
 
   .labelOption {
-    @apply w-full m-0 flex items-center gap-3 py-5 px-10 rounded-xl cursor-pointer bg-background border-[2px] border-transparent has-[:checked]:border-accent has-[:checked]:bg-blue-500/20;
+    @apply w-full m-0 flex items-center gap-3 py-5 px-10 rounded-xl cursor-pointer bg-background border-[2px] border-muted has-[:checked]:border-accent has-[:checked]:bg-blue-500/20;
   }
 
   .activeLink {
