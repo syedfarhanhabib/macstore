@@ -133,12 +133,57 @@ img::selection {
     @apply relative after:absolute after:w-3 after:h-1 md:after:left-1/2 md:after:-translate-x-1/2 after:rounded-full after:bg-green-500 md:after:-bottom-2 after:max-md:-right-4 after:shadow-md after:shadow-green-500 !shadow-green-500/70;
   }
 
-  /* .activeLink {
-    @apply  ;
-  } */
+  /* .masked{
+  @apply relative bg-clip-text text-transparent bg-cover bg-[url('/img/hero-pattern.svg')] before:absolute before:top-0 bef;
+} */
 
 }
 
+.masked {
+  z-index: 3;
+  position: relative;
+  /* background: url('/red.png') no-repeat center center; */
+  -webkit-background-clip: text;
+  background-clip: text;
+  width: fit-content;
+  color: transparent;
+  background-size: cover;
+  opacity: 100;
+}
+
+.maskedInner {
+  z-index: 2;
+  content: "iMac.";
+  position: absolute;
+  /* background: url("/red.png") no-repeat center center; */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: cover;
+  opacity: 0.3;
+  filter: blur(40px);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.maskedInner2 {
+  z-index: 1;
+  content: "iMac.";
+  position: absolute;
+  /* background: url("/red.png") no-repeat center center; */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-size: cover;
+  opacity: 0.2;
+  filter: blur(20px);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
 
 /* html::-webkit-scrollbar {
   width: 0px;

@@ -87,7 +87,7 @@ const MultiStepForm = () => {
   }
 
   return (
-    <section className="relative overflow-hidden bg-muted rounded-3xl">
+    <section id="form" className="relative overflow-hidden bg-muted rounded-3xl">
       <div className='flex flex-col justify-between relative p-10 max-w-[85vw] min-h-[85vh] mx-auto px-10 sm:px-32 lg:px-64'>
         <div className="top">
           <motion.div

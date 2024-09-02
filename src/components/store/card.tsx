@@ -25,8 +25,9 @@ const Card = ({ title, price, img, btn, link, click }: cardProps) => {
             <div
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                className='relative overflow-hidden shadow-lg group hover:scale-[1.01] duration-200 p-10 w-96 h-96 flex flex-col justify-between rounded-3xl bg-muted'
+                className='relative overflow-hidden shadow-lg group hover:scale-[1.01] p-10 w-96 h-96 flex flex-col justify-between rounded-3xl bg-muted transition-all duration-300'
             >
+                {/* <div className={`bg center duration-300 w-full h-full bg-foreground/20 backdrop-blur-xl ${isHovered? "block":"hidden"}`}/> */}
                 <h4 className='title'>{title}</h4>
                 <Image src={img} alt={title} width={200} height={200} className='w-[80%] center object-contain' />
                 <motion.div
@@ -36,7 +37,7 @@ const Card = ({ title, price, img, btn, link, click }: cardProps) => {
                     className='z-20 center' >
                     <DialogTrigger
                         onClick={click}
-                        className='-translate-x-1/2 -translate-y-1/2 bg-accent text-primary-foreground shadow hover:opacity-85 hover:scale-105 active:scale-95 px-4 py-2  rounded-full' >Learn more</DialogTrigger>
+                        className='-translate-x-1/2 -translate-y-1/2 bg-accent text-primary-foreground shadow hover:scale-105 active:scale-95 px-4 py-2 tracking-tighter rounded-full' >Learn more</DialogTrigger>
                 </motion.div>
                 <div className="flex items-end justify-between">
                     <p className='desc px-0'>from <span className='subtitle font-medium' >{price}</span></p>

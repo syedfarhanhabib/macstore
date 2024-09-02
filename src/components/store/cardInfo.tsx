@@ -9,6 +9,7 @@ import Card from './card';
 import { storeCard } from '@/lib/data';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
 import DialogTabs from './dialogTabs';
+import Link from 'next/link';
 
 interface cardInfoProps {
     isOpen: boolean;
@@ -74,7 +75,7 @@ const CardInfo = () => {
                                             <h3 className='title pb-2' >{item.data.name}</h3>
                                             <div className="price-buy flex justify-between">
                                                 <h4 className='price desc' >from <span className='text-2xl' >{item.data.price}</span></h4>
-                                                <Button variant={"default"} className='bg-accent text-background' >Buy</Button>
+                                                <Link href={item.data.link} ><Button>Buy</Button></Link>
                                             </div>
                                             <div className="dialogContent">
                                                 <div className="left w-1/12">

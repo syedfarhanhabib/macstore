@@ -37,8 +37,8 @@ const Lineup = () => {
                                             </div>
                                             <p className='desc px-4' >{item.description}</p>
                                             <div className="buttons flex items-center gap-0">
-                                                <Link href={item.link} ><Button variant={"default"} className='bg-accent' >Learn more</Button></Link>
-                                                <Button variant={"link"} >Buy now <BiRightArrowAlt /> </Button>
+                                                <Link href={item.link} ><Button>Learn more</Button></Link>
+                                                <Button variant={"link"}>Buy now <BiRightArrowAlt /></Button>
                                             </div>
                                             <div className='w-full h-fit border-t border-muted-foreground/60 pt-10 mt-5 flex flex-col gap-10' >
                                                 <div className='lineupSection' >

@@ -47,7 +47,7 @@ const Page: React.FC = () => {
         <Video data-scroll data-scroll-speed=".8" videoSrc="/machero.mp4" />
       </section>
       <Categories data-scroll-section />
-      <section data-scroll-section className='carousel px-section' >
+      <section data-scroll-section className='carousel px-section overflow-x-hidden' >
         <h3 className='heading' >Get to know Mac.</h3>
         <Carousel className='px-section'>
           <CarouselContent className='w-full flex gap-10'>
@@ -70,8 +70,8 @@ const Page: React.FC = () => {
             <p className="text-center title lg:text-left">
               With its sleek design, powerful processors, and built-in security.
             </p>
-            <Link href="/choose-yours" className='mx-auto lg:mx-0'>
-              <Button variant={"default"} className='bg-accent text-background' >Learn more</Button>
+            <Link href="/choose-yours#form" className='mx-auto lg:mx-0'>
+              <Button>get started</Button>
             </Link>
           </div>
           <div className="right">
@@ -103,8 +103,8 @@ const Page: React.FC = () => {
           </CarouselContent>
         </Carousel>
       </section>
-      <footer>
-        <h1>syed farhan habib</h1>
+      <footer className='px-section py-5'>
+        <p className='desc'> © All rights reserved, Syed Farhan Habib</p>
       </footer>
     </main >
   );

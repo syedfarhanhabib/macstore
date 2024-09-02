@@ -5,9 +5,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
-
-
-interface SubNavProps {
+type SubNavProps = {
     title: string;
     navLinks: {
         label: string;
@@ -96,7 +94,7 @@ const SubNav = ({ title, navLinks, btnLink, btnLabel }: SubNavProps) => {
                     </button>
                     {btnLink && btnLabel && (
                         <Link href={btnLink}>
-                            <Button size="sm" className="bg-accent">
+                            <Button size="sm">
                                 {btnLabel}
                             </Button>
                         </Link>
