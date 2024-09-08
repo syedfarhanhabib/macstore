@@ -40,7 +40,7 @@ const Page: React.FC = () => {
           <h1 className="heading gradientText">
             Mac
           </h1>
-          <h3 className="heading">  If you can dream it,
+          <h3 className="heading">If you can dream it,
             <br />
             Mac can do it.</h3>
         </figure>
