@@ -10,6 +10,11 @@ import Image from 'next/image'
 import React from 'react'
 
 const page = () => {
+    const navLinks = [
+        { label: 'Overview', href: '#overview' },
+        { label: 'Tech specs', href: '#tech-specs' },
+        { label: 'Compare', href: '#compare' },
+    ];
     const performance = [
         { label: "Mac mini with M2 Pro", percentage: "w-[100%]", color: "bg-gradient-to-r from-blue-300 to-blue-700", figure: "4.7x" },
         { label: "Mac mini with M2", percentage: "w-[80%]", color: "bg-gradient-to-r from-yellow-300 to-purple-700", figure: "3.6x" },
@@ -17,11 +22,7 @@ const page = () => {
         { label: "iMac 27‑inch with Core i7 and Radeon Pro 5500 XT", percentage: "w-[40%]", color: "bg-gradient-to-r from-zinc-100 to-zinc-700" },
         { label: "Mac mini with Core i7 (baseline)", percentage: "w-[10%]", color: "bg-gradient-to-r from-zinc-100 to-zinc-300" },
     ]
-    const navLinks = [
-        { label: 'Overview', href: '#overview' },
-        { label: 'Tech specs', href: '#tech-specs' },
-        { label: 'Compare', href: '#compare' },
-    ];
+
     return (
         <main className='pb-40 light'>
             <ThemeSwitch defaultTheme='dark' />
@@ -35,8 +36,7 @@ const page = () => {
             <section id='overview' className=' min-h-dvh max-h-max sm:h-[120vh] md:h-[140vh] lg:h-[160vh] flex flex-col justify-between items-center pb-10 pt-36' >
                 <Image src={"/mini-cover.jpg"} height={1000} width={1000} alt='mini' className='w-full object-contain saturate-[1.25] contrast-[.93] z-0' />
                 <div className="grid lg:-mt-36 z-[3] text-center w-full py-5 bg-gradient-to-t from-background via-background to-background/0">
-                    {/* <h5 className='heading w-fit left-1/2 -translate-x-1/2 masked'>Mac mini</h5> */}
-                    <Title text='Mac mini.' bg='/red.png' className='heading absolute left-1/2 -translate-x-1/2' />
+                    <Title text='Mac mini.' bg='random/15.jpg' className='heading absolute left-1/2 -translate-x-1/2' />
                     <p className='lg:px-60 px-10 desc' >Mac mini with M2 packs the speed you need to get more done faster. And M2 Pro takes it to a whole new level — bringing a pro chip to Mac mini for the first time. Add to that a versatile array of ports and you’ve got a desktop ready to flex in any setup, no matter which chip you choose.</p>
                     <Button variant={"secondary"} className='mx-auto mt-2'>From $599</Button>
                 </div>
@@ -111,8 +111,6 @@ const page = () => {
                     </TabsContent>
                 </Tabs>
             </div>
-
-
         </main>
     )
 }

@@ -9,8 +9,8 @@ type TitleProps = {
 const Title = ({ bg, text, className }: TitleProps) => {
     return (
         <h1
-            className={`masked ${className} bg-center bg-cover`}
-            style={{ backgroundImage: `url(${bg})`}}
+            className={`masked ${className} group bg-center bg-cover`}
+            style={{ backgroundImage: `url(${bg})` }}
         >
             {text}
             <span
@@ -20,7 +20,7 @@ const Title = ({ bg, text, className }: TitleProps) => {
                 {text}
             </span>
             <span
-                className='maskedInner2'
+                className='maskedInner2 group-hover:scale-125 transition-all duration-700'
                 style={{ backgroundImage: `url(${bg})` }}
             >
                 {text}

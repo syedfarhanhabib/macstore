@@ -40,7 +40,7 @@ const SubNav = ({ title, navLinks, btnLink, btnLabel }: SubNavProps) => {
 
         setActiveSection(currentSection);
 
-        if (window.scrollY > 0) {
+        if (window.scrollY > 0 || document.documentElement.scrollTop > 0) {
             setScrolled(true);
         } else {
             setScrolled(false);
