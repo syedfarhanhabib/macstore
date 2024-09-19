@@ -1,12 +1,14 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 type TitleProps = {
     text: string;
     bg: string;
     className?: string;
 }
-// before:(content-[""] absolute w-full h-full left-0 top-0 bg-clip-text bg-cover opacity-70)
+
 const Title = ({ bg, text, className }: TitleProps) => {
+
     return (
         <h1
             className={`masked ${className} group bg-center bg-cover`}

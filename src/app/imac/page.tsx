@@ -11,6 +11,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react';
 import { useTheme } from 'next-themes';
+import { motion } from 'framer-motion';
 
 const page = () => {
     const lenis = useLenis(({ scroll }) => {
@@ -54,19 +55,19 @@ const page = () => {
                     }
                 })
         })
-
-        let last = document.getElementById('specs');
-
-        // Add this new ScrollTrigger for theme change
-        ScrollTrigger.create({
-            trigger: last,
-            start: "bottom top",
-            // end: "bottom bottom",
-            scrub: true,
-            onEnter: () => setTheme('light'),
-            onLeaveBack: () => setTheme('dark')
-        });
     })
+
+    useEffect(() => {
+        const lastElement = document.getElementById('specs');
+        if (lastElement) {
+            ScrollTrigger.create({
+                trigger: lastElement,
+                start: "top 100px",
+                // onEnter: () => setTheme('light'),
+                onLeaveBack: () => setTheme('dark')
+            });
+        }
+    }, [setTheme]);
 
     return (
         <ReactLenis root>
@@ -75,8 +76,14 @@ const page = () => {
                 <SubNav title='iMac' navLinks={navLinks} btnLink='/' btnLabel='Buy' />
                 <Tag text="Students save up to $200 on iMac. Plus get a $150 gift card. Offer ends soon." />
                 <div className='center !fixed flex flex-col items-center justify-center z-[-1]'>
-                    <h1 className="heading  text-center text-white -mb-5">iMac Pro</h1>
-                    <h2 className="subtitle text-center text-white">The ultimate all-in-one for professionals</h2>
+                    <Title text='iMac Pro' bg='/random/7.jpg' className='heading text-center' />
+                    <h3 className='flex subtitle' >
+                        {"The ultimate all-in-one for professionals.".split('').map((char, index) => (
+                            <motion.span key={index} initial={{ opacity: 0, y: 20, scaleY: 0 }} whileInView={{ opacity: 1, y: 0, scaleY: 1 }} transition={{ delay: index * 0.05 }} className={`${char === " " ? "w-1" : "w-auto"}`}>
+                                {char}
+                            </motion.span>
+                        ))}
+                    </h3>
                 </div>
                 <section id='overview' className='w-full h-[350vh] overflow-hidden pt-44 relative grid grid-cols-8 gap-20'>
                     {/* <Title text='iMac Pro' bg='/red.png' className='heading center !fixed' /> */}
