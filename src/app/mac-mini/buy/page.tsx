@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import SubNav from "@/components/ui/subNav";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import ThemeSwitch from "@/components/ui/theme";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
@@ -31,7 +31,7 @@ const Page = () => {
         { label: "Compare", href: "/mac-mini#compare" },
     ];
 
-    const miniSpecs: SpecsTypes = [
+    const miniSpecs: SpecsTypes = useMemo(() => [
         {
             title: "Processor",
             options: [
@@ -55,7 +55,7 @@ const Page = () => {
                 { label: "2TB SSD storage", price: 100 }
             ]
         }
-    ];
+    ], []); // Empty dependency array means this will only be created once
 
     // Initialize selectedSpecs based on the first option's label of each category in miniSpecs
     const initialSpecs = miniSpecs.reduce((acc, item) => {

@@ -13,7 +13,7 @@ import { useGSAP } from '@gsap/react';
 import { useTheme } from 'next-themes';
 import { motion } from 'framer-motion';
 
-const page = () => {
+const Page = () => {
     const lenis = useLenis(({ scroll }) => {
         // called every scroll
     })
@@ -167,6 +167,6 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
 
 // Add this function at the end of the file, outside the componen
