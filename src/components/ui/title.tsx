@@ -2,30 +2,30 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 type TitleProps = {
-    text: string;
+    children: React.ReactNode;
     bg: string;
     className?: string;
 }
 
-const Title = ({ bg, text, className }: TitleProps) => {
+const Title = ({ bg, children, className }: TitleProps) => {
 
     return (
         <h1
             className={`masked ${className} group bg-center bg-cover`}
             style={{ backgroundImage: `url(${bg})` }}
         >
-            {text}
+            {children}
             <span
                 className='maskedInner'
                 style={{ backgroundImage: `url(${bg})` }}
             >
-                {text}
+                {children}
             </span>
             <span
-                className='maskedInner2 group-hover:scale-125 transition-all duration-700'
+                className='maskedInner2 !opacity-15 group-hover:scale-125 transition-all duration-700'
                 style={{ backgroundImage: `url(${bg})` }}
             >
-                {text}
+                {children}
             </span>
         </h1>
 

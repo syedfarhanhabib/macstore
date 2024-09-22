@@ -169,7 +169,7 @@ const MultiStepForm = () => {
               type="button"
               onClick={nextStep}
               disabled={!selections[currentStep]}
-              className="bg-green-600 disabled:bg-foreground"
+              className="bg-green-500 hover:bg-green-600"
             >
               <motion.h3
                 initial={{ opacity: 0, scaleX: '90%' }}

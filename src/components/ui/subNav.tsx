@@ -59,7 +59,6 @@ const SubNav = ({ title, navLinks, btnLink, btnLabel }: SubNavProps) => {
         };
     }, []);
 
-
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {

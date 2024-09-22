@@ -3,11 +3,11 @@ import { useTheme } from 'next-themes'
 import { useEffect } from 'react'
 
 export default function ThemeSwitch({ defaultTheme = 'light' }: { defaultTheme?: 'light' | 'dark' }) {
-    const { setTheme } = useTheme()
+    const { theme, setTheme } = useTheme()
 
-    useEffect(() => {
+    useEffect(() => {   
         setTheme(defaultTheme)
-    }, [defaultTheme, setTheme])
+    }, [defaultTheme, setTheme, theme])
 
     return null  // No toggle switch is rendered, making the theme non-changeable.
 }

@@ -56,7 +56,7 @@ const Page: React.FC = () => {
                 className={`relative basis-3/4 md:basis-1/3 cursor-grab ${index == 3 ? "text-zinc-100" : "text-zinc-950"} flex-shrink-0 h-[36rem] md:h-[48rem] overflow-hidden p-5 rounded-3xl`}
                 key={index}
               >
-                <h2 className={`leading-none text-xs md:text-sm !py-2 !px-3 ${index == 3 ? "text-zinc-950 bg-zinc-50" : "bg-zinc-950 text-zinc-50"} rounded-full w-fit`} >{item.title}</h2>
+                <Button className={`${index == 3 ? "text-foreground bg-background" : "bg-foreground text-background"}`} size={"sm"} variant={"secondary"} disabled >{item.title}</Button>
                 <p className={`title ${index == 3 ? "text-zinc-50" : " text-zinc-950"}`} >{item.description}</p>
                 <Image src={item.img} alt='' fill className='z-[-1] w-full h-full absolute left-0 bottom-0 object-cover' />
               </CarouselItem>
@@ -71,7 +71,7 @@ const Page: React.FC = () => {
               With its sleek design, powerful processors, and built-in security.
             </p>
             <Link href="/choose-yours#form" className='mx-auto lg:mx-0'>
-              <Button>get started</Button>
+              <Button>Get started</Button>
             </Link>
           </div>
           <div className="right">

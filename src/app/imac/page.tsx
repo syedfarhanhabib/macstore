@@ -3,7 +3,7 @@ import SubNav from '@/components/ui/subNav'
 import Tag from '@/components/ui/tag';
 import ThemeSwitch from '@/components/ui/theme';
 import Title from '@/components/ui/title';
-import React, { useEffect, useMemo, useRef } from 'react'
+import React, { useEffect } from 'react'
 import Lenis from 'lenis'
 import Image from 'next/image';
 import { ReactLenis, useLenis } from 'lenis/react'
@@ -62,8 +62,9 @@ const Page = () => {
         if (lastElement) {
             ScrollTrigger.create({
                 trigger: lastElement,
-                start: "top 100px",
-                // onEnter: () => setTheme('light'),
+                start: "top top",
+                end: "bottom bottom",
+                onEnter: () => setTheme('light'),
                 onLeaveBack: () => setTheme('dark')
             });
         }
@@ -76,7 +77,7 @@ const Page = () => {
                 <SubNav title='iMac' navLinks={navLinks} btnLink='/' btnLabel='Buy' />
                 <Tag text="Students save up to $200 on iMac. Plus get a $150 gift card. Offer ends soon." />
                 <div className='center !fixed flex flex-col items-center justify-center z-[-1]'>
-                    <Title text='iMac Pro' bg='/random/7.jpg' className='heading text-center' />
+                    <Title bg='/random/7.jpg' className='heading text-center'>iMac Pro</Title>
                     <h3 className='flex subtitle' >
                         {"The ultimate all-in-one for professionals.".split('').map((char, index) => (
                             <motion.span key={index} initial={{ opacity: 0, y: 20, scaleY: 0 }} whileInView={{ opacity: 1, y: 0, scaleY: 1 }} transition={{ delay: index * 0.05 }} className={`${char === " " ? "w-1" : "w-auto"}`}>
